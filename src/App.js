@@ -14,11 +14,6 @@ import Candidates from "./Components/Candidates";
 import Notifications from "./Components/Notifications";
 import MyTasks from "./Components/MyTasks";
 import CreateJobOpening from "./Components/CreateJobOpening";
-import Adminsidenav from "./Components/Adminsidenav";
-import CreateContract from "./Components/CreateContract";
-import ContractDetails from "./Components/ContractDetails";
-import Contracts from "./Components/Contracts";
-import AdminDashboard from "./Components/AdminDashboard";
 import RecruiterDashboard from "./Components/RecruiterDashboard";
 
 
@@ -39,10 +34,6 @@ const App = () => {
         <Route path="/settings/changePassword" element={<ChangePassword />} />
         <Route path="/candidates" element={<Candidates />} />
         <Route path="/candidates/addCandidate" element={<CandidateInfo />} />
-        <Route path="/contracts/createcontract" element={<CreateContract />} />
-        <Route path="/createcontract/contractdetails" element={<ContractDetails />} />
-        <Route path="/contracts" element={<Contracts />} />
-        <Route path="/admin" element={<AdminDashboard />} />
       </Routes>
       
     </>

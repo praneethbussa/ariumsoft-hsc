@@ -10,17 +10,13 @@ import CandidateStatus from "./CandidateStatus";
 import CandidateNotes from "./CandidateNotes";
 import Notifications from "./Notifications";
 import MyTasks from "./MyTasks";
-import CreateContract from "./CreateContract";
-import Contracts from "./Contracts";
-import AdminDashboard from "./AdminDashboard";
 
 
 const Home = (props) => {
     const {isLogin} = props;
     return(
         <>
-        {/* <Header isLogin={isLogin}/> */}
-        <Contracts />
+        <RecruiterDashboard />
         </>
     )
 }
