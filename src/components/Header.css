@@ -1,0 +1,11 @@
+.logo {
+    padding: 0px 52px 0px 33px;
+}
+.header {
+    width: 1146px;
+    border-radius: 20px 0px 0px 20px;
+}
+
+.settings, .notifications, .profilepicture {
+    padding-right: 30px;
+}
