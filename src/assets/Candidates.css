@@ -1,0 +1,100 @@
+.candidate-screen{
+    float: right;
+    width: 83%;
+    background-color: white;
+    border: transparent;
+    border-radius: 15px 0px 0px 15px;
+    margin-top: 25px; 
+    padding: 25px;
+}
+
+.candidate-text{
+font-size: 20px;
+font-family: 'Outfit';
+font-weight: 600;
+color: #001D65;
+}
+
+.add-button{
+    padding: 12px;
+    font-size: 16px;
+    font-family: 'Outfit';
+    font-weight: 600;
+    background-color: #001D65;
+    color: white;
+    border-radius: 10px;
+    width: 90%;
+    border: transparent;
+}
+
+.search-bar{
+    position: relative;
+    margin-top: 30px;
+    width: 94%;
+    }
+    .search-bar input{
+     height: 60px;
+     text-indent: 25px;
+     border: 1px solid #F1F1F1;
+     border-radius: 10px ;
+    }
+    .search-bar .fa-search{
+        position: absolute;
+        top: 23px;
+        left: 16px;
+        color: #CCCCCC;
+       }
+
+.select-candidate label{
+    border-radius: 10px;
+    padding: 15px;
+    color: #F88022;
+    font-size: 18px;
+    font-family: 'outfit';
+}
+
+.select-candidate option{
+    color: #001D65;
+    font-size: 18px;
+    font-family: 'outfit';
+    font-weight: 400;
+}
+
+.select-candidate{
+    margin-top: 20px;
+}
+
+.candid-experience{
+    margin-top: 25px;
+    color: #001D65;
+    font-size: 16px;
+    font-family: 'outfit';
+    font-weight: 400;
+}
+
+.candidate-block1{
+    margin-top: 30px;
+}
+.candidate-block2{
+    margin-top: 25px;
+}
+.recruit{
+    color: #3AB8DA;
+    font-size: 16px;
+    font-family: 'outfit';
+    font-weight: 400;
+    text-decoration: underline;
+}
+.exclusive{
+    margin-inline-start: 5px;
+    color: black;
+    font-size: 12px;
+    font-family: 'outfit';
+    font-weight: 500;
+}
+.until-date{
+    margin-inline-start: 5px;
+    color: #838383;
+    font-size: 16px;
+    font-style: italic;
+}

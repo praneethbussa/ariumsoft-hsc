@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="21.691" height="21.691" viewBox="0 0 21.691 21.691">
+  <g id="Group_5235" data-name="Group 5235" transform="translate(-623.108 -171.395)">
+    <path id="tick_1_" data-name="tick (1)" d="M58.346,48A10.346,10.346,0,1,0,68.691,58.346,10.344,10.344,0,0,0,58.346,48Z" transform="translate(575.608 123.895)" fill="#fe051b" stroke="#fff" stroke-width="1"/>
+    <g id="Group_5235-2" data-name="Group 5235" transform="translate(629.693 178.373)">
+      <path id="Path_1614" data-name="Path 1614" d="M175.841,18.4l9-9" transform="translate(-175.841 -9.4)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="1.5"/>
+      <path id="Path_1615" data-name="Path 1615" d="M0,9,9,0" transform="translate(9 0) rotate(90)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="1.5"/>
+    </g>
+  </g>
+</svg>

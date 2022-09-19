@@ -1,0 +1,55 @@
+.notification-screen{
+    float: right;
+    width: 83%;
+    background-color: white;
+    border: transparent;
+    border-radius: 15px 0px 0px 15px;
+    margin-top: 25px; 
+    padding: 25px;
+}
+
+.notification-text{
+    font-size: 20px;
+    font-family: 'Outfit';
+    font-weight: 600;
+    color: #001D65;
+}
+
+.notification-list1{
+    margin-top: 25px;
+    border: 1px solid #F1F1F1;
+    border-radius: 10px;
+    padding: 15px 0px 25px 15px;
+}
+.notification-list2, .notification-list3, .notification-list4, .notification-list5{
+    margin-top: 10px;
+    border: 1px solid #F1F1F1;
+    border-radius: 10px;
+    padding: 15px 0px 25px 15px;
+}
+
+.notification1, .notification2, .notification3, .notification4, .notification5{
+    font-size: 16px;
+    font-family: 'Outfit';
+    font-weight: 500;
+    color: #0C0C0C;
+    width: 70%;
+}
+
+.notification-date{
+    float: right;
+    margin-right: 20px;
+    font-size: 12px;
+    font-family: 'Outfit';
+    font-weight: 400;
+    color: #A2A2A2;
+}
+
+.notification-time{
+    float: right;
+    margin-right: 20px;
+    font-size: 12px;
+    font-family: 'Outfit';
+    font-weight: 400;
+    color: #A2A2A2;
+}

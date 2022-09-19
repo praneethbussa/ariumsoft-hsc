@@ -1,0 +1,94 @@
+.profile-screen{
+    float: right;
+    width: 83%;
+    background-color: white;
+    border: transparent;
+    border-radius: 15px 0px 0px 15px;
+    margin-top: 25px; 
+    padding: 25px;
+}
+
+.profile{
+    font-size: 20px;
+    font-family: 'Outfit';
+    font-weight: 600;
+    color: #001D65;
+}
+
+.recruiter-details{
+    border: 1px solid #021668;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.name-of-recruiter{
+    font-size: 18px;
+    font-family: 'Outfit';
+    font-weight: 600;
+    color: #0C0C0C;
+}
+
+.role-of-recruiter{
+    font-size: 16px;
+    font-family: 'Outfit';
+    font-weight: 400;
+    color: #0C0C0C;
+}
+
+.recruiter-mail{
+    font-size: 16px;
+    font-family: 'Outfit';
+    font-weight: 400;
+    color: #0C0C0C;
+    margin-top: 20px;
+}
+
+.recruiter-contact{
+    font-size: 16px;
+    font-family: 'Outfit';
+    font-weight: 400;
+    color: #0C0C0C;
+}
+
+.image-profile{
+    width: 70%;
+    margin-left: 25px;
+}
+
+.change-btn{
+    transform: translate(24%,-105%);
+    background-color: #0C0C0C66;
+    border: transparent;
+    color: #FFFFFF;
+    font-size: 14px;
+    font-family: 'Outfit';
+    font-weight: 300;
+    border-radius: 0px 0px 15px 15px;
+    width: 69%;
+}
+
+.name-edit{
+    border: 1px solid #F1F1F1;
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 30px;
+}
+.contact-edit, .mail-edit, .designation-edit{
+    border: 1px solid #F1F1F1;
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+.name-label, .contact-label, .mail-label, .role-label{
+    font-size: 12px;
+    font-family: 'Outfit';
+    font-weight: 500;
+    color: #0C0C0C;
+}
+.full-name, .full-num, .full-mail, .full-role{
+    font-size: 16px;
+    font-family: 'Outfit';
+    font-weight: 400;
+    color: #0C0C0C;
+}

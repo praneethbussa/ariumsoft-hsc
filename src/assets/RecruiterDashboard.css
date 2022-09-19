@@ -1,0 +1,184 @@
+.recruiter-page{
+    float: right;
+    width: 83%;
+    background-color: white;
+    border: transparent;
+    border-radius: 15px 0px 0px 15px;
+    margin-top: 25px; 
+    padding: 15px !important;
+}
+
+.recruiter-name{
+    color: #001D65;
+    font-size: 20px;
+    font-family: 'Outfit';
+    font-weight: bold;
+    margin-top: 28px;
+    opacity: 1;
+}
+
+.tasks{
+    border: 1px solid #F1F1F1;
+    border-radius: 10px;
+    width: 40%;
+}
+
+.numof_tasks{
+    font-size: 70px;
+    font-family: 'Outfit';
+    font-weight: 500;
+    color: #3AB8DA;
+    text-align: center;
+}
+
+.open_tasks{
+    font-size: 14px;
+    font-family: 'Outfit';
+    font-weight: 400;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.click-more{
+    text-align: end;
+    margin-right: 5px;
+    margin-top: -20px;
+    font-size: 14px;
+    font-family: 'Outfit';
+    font-weight: 400;
+    color: #3AB8DA;
+    text-decoration: underline;
+}
+
+.task1, .Job1, .Candidate1{
+    margin-top: 25px !important;
+    border: 1px solid #F1F1F1;
+    border-radius: 10px;
+    padding: 10px;
+    width: 80% !important;
+    margin-left: 12px;
+}
+.task2, .Job2, .Candidate2,
+.task3, .Job3, .Candidate3,
+.task4, .Job4, .Candidate4,
+.task5, .Job5, .Candidate5{
+    margin-top: 10px !important;
+    border: 1px solid #F1F1F1;
+    border-radius: 10px;
+    padding: 10px;
+    width: 80% !important;
+    margin-left: 12px;
+}
+
+.jobid{
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+    color: #021668;
+    font-size: 16px;
+    font-family: 'Outfit';
+    font-weight: 600;
+}
+.assignee-name{
+    font-size: 14px;
+    font-family: 'Outfit';
+    font-weight: 600;
+    color: #0C0C0C;
+    margin-top: 7px;
+}
+#user-icon{
+    color: #3AB8DA;
+    background-color: white;
+    font-size: 16px;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+/* 
+.job{    
+    border: 1px solid #F1F1F1;
+    border-radius: 10px;
+    width: 40%;
+    margin-left: 15px;
+} */
+
+.numof_openings{
+    margin-left: 44px;
+    color: #3AB8DA;
+    font-size: 70px;
+    font-family: 'Outfit';
+    font-weight: 500;
+    margin-top: 3px;
+}
+.open_jobs{
+    font-size: 14px;
+    font-family: 'Outfit';
+    font-weight: 400;
+    margin-left: 32px;
+}
+
+.candidates{
+    border: 1px solid #F1F1F1;   
+    border-radius: 10px;
+    width: 40%;
+    margin-left: 15px;
+}
+
+.numof_candidates{
+    margin-left: 44px;
+    color: #3AB8DA;
+    font-size: 70px;
+    font-family: 'Outfit';
+    font-weight: 500;
+    margin-top: 3px;
+}
+
+.open_candidates{
+    font-size: 14px;
+    font-family: 'Outfit';
+    font-weight: 400;
+   margin-left: 9px;
+}
+.candid-status{
+    float: right;
+    color: #A2A2A2;
+    font-size: 10px;
+    font-family: 'Outfit';
+    font-weight: 400;
+}
+.tick-img{
+    /* float: right;
+    margin-top: -20px; */
+    position: relative;
+    margin-inline: -15px;
+}
+.candidateId1, .candidateId2, .candidateId3, .candidateId4, .candidateId5{
+    color: #001D65;
+    font-size: 16px;
+    font-family: 'Outfit';
+    font-weight: 600;
+    display: inline;
+    /* margin-top: -44px; */
+}
+
+#candidate-icon{
+    font-size: 53px;
+    margin-left: 5px;
+    color: #3AB8DA;
+    background-color: white;
+}
+.candidate-role{
+    font-size: 14px;
+    font-family: 'Outfit';
+    font-weight: 400;
+    color: #0C0C0C;
+    margin-left: 77px;
+    margin-top: -1px;
+}
+
+.date, .time{
+    font-size: 12px;
+    font-family: 'Outfit';
+    font-weight: 400;
+    margin-top: 9px;
+    margin-left: -1px;
+}
+

@@ -1,0 +1,115 @@
+.status-screen{
+        float: right;
+        width: 83%;
+        background-color: white;
+        border: transparent;
+        border-radius: 15px 0px 0px 15px;
+        margin-top: 25px; 
+        padding: 30px;
+}
+
+.status-text{
+        font-size: 14px;
+        font-family: 'Outfit';
+        font-weight: 500;
+        color: #3AB8DA;
+}
+
+  #tracking {
+    margin-bottom: 1rem;
+  }
+  /* [class*="tracking-status-"] p {
+    margin: 0;
+    font-size: 1.1rem;
+    color: #fff;
+    text-transform: uppercase;
+    text-align: center;
+  }
+  [class*="tracking-status-"] {
+    padding: 1.6rem 0;
+  } */
+
+  .tracking-status {
+    border-left: 3px dashed #F1F1F1;
+    position: relative;
+    padding: 0rem 1.5rem 2rem 2.5rem;
+    font-size: 0.9rem;
+    min-height: 5rem;
+  }
+  .tracking-status:last-child {
+    border: none;
+    margin-left: 3px;
+  }
+
+  .status-content1{
+    font-size: 14px;
+    font-family: 'Outfit';
+    font-weight: 500;
+    color: #CCCCCC;
+  }
+  .status-content2{
+    font-size: 16px;
+    font-family: 'Outfit';
+    font-weight: 400;
+    color: #000000;
+    display: block;
+    margin-top: 5px;
+  }
+  .status-postedtime{
+    font-size: 12px;
+    font-family: 'Outfit';
+    font-weight: 400;
+    color: #A2A2A2;
+    margin-top: 5px;
+  }
+  .status-posteddate{
+    font-size: 12px;
+    font-family: 'Outfit';
+    font-weight: 400;
+    color: #A2A2A2;
+    margin-top: 5px;
+    margin-left: 10px;
+  }
+
+  .tracking-status .tracking-icon {
+    position: absolute;
+    left: -0.7rem;
+    width: 1.1rem;
+    height: 1.1rem;
+    text-align: center;
+    border-radius: 50%;
+    font-size: 1.1rem;
+    background-color: #fff;
+    color: black;
+  }
+  
+  .tracking-status .tracking-icon.status-current {
+    width: 1.9rem;
+    height: 1.9rem;
+    left: -1.1rem;
+  }
+  .tracking-status .tracking-icon.status-intransit {
+    color: #2DCC67;
+    font-size: 0.6rem;
+  }
+  .tracking-status .tracking-icon.status-current {
+    color: #2DCC67;
+    font-size: 0.6rem;
+  }
+  
+  .tracking-status .tracking-content {
+    font-weight: 600;
+    font-size: 17px;
+  }
+  
+  .blinker {
+    border: 7px solid #e9f8ea;
+    /* animation: blink 1s; */
+    animation-iteration-count: infinite;
+  }
+  @keyframes blink { 50% { border-color:#fff ; }  }
+  
+  
+  
+  
+

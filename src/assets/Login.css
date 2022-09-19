@@ -1,0 +1,181 @@
+.login-container{
+    width: 100%;
+    background-color: #FFFFFF;
+  }
+  
+  .input1{
+    margin-top: 30px;
+    margin-left: 510px;
+    width: 400px;
+    height: 50px;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border: 1px solid #F1F1F1;
+    border-radius: 10px;
+    opacity: 1;
+    padding-left: 35px;
+    font-family: 'Outfit';
+    font-weight: 400;
+    letter-spacing: 0px;
+    background-image: url("D:/ariumsoft-hsc/src/Images/user-img.jpg");
+    background-size: 30px;
+    background-position: left;
+  }
+
+  .input2{
+    margin-top: 10px;
+    margin-left: 510px;
+    width: 400px;
+    height: 50px;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border: 1px solid #F1F1F1;
+    border-radius: 10px;
+    opacity: 1;
+    letter-spacing: 0px;
+    padding-left: 35px;
+    font-family: 'Outfit';
+    font-weight: 400;
+    color: #0c0c0c;
+    letter-spacing: 0px;
+    background-image: url("D:\ariumsoft-hsc\src\Images\password-img.jpg");
+    background-size: 30px;
+    background-position: left;
+  }
+
+  ::placeholder{
+    color: #0c0c0c;
+    opacity: 1;
+  }
+
+  .forget{
+    color: #FD6010;
+    text-decoration: underline;
+    margin-left: 825px;
+    font-size: 16px;
+    margin-top: 20px;
+    font-family: 'Outfit';
+    font-weight: 400;
+    opacity: 1;
+  }
+
+  .logoimg{
+    width: 250px;
+    height: 100px;
+    margin-top: 120px;
+    margin-left: 610px;
+    border: 1px solid;
+    background-color: #F1F1F1;
+    border: none;
+  }
+
+
+  /* responsive */
+
+
+  @media (min-width: 1024px) and (max-width: 1150px) {
+    .input1{
+      margin-left: 310px;
+  }
+  .input2{
+      margin-left: 310px;
+  }
+  .logoimg{
+      margin-left: 400px;
+  }
+  .forget{
+    margin-left: 620px;
+}
+  }
+
+  @media (min-width: 1151px) and (max-width: 1270px){
+    .input1{
+      margin-left: 350px;
+    }
+    .input2{
+      margin-left: 350px;
+    }
+    .logoimg{
+      margin-left: 440px;
+    }
+    .forget{
+      margin-left: 660px;
+    }
+  }
+
+  @media (min-width: 1280px) and (max-width: 1350px){
+    .input1{
+      margin-left: 410px;
+    }
+    .input2{
+      margin-left: 410px;
+    }
+    .logoimg{
+      margin-left: 500px;
+    }
+    .forget{
+      margin-left: 720px;
+    }
+  }
+
+  @media (min-width: 1360px) and (max-width: 1399px){
+    .input1{
+      margin-left: 450px;
+    }
+    .input2{
+      margin-left: 450px;
+    }
+    .logoimg{
+      margin-left: 540px;
+    }
+    .forget{
+      margin-left: 760px;
+    }
+  }
+
+  
+  @media (min-width: 1400px) and (max-width: 1439px){
+    .input1{
+      margin-left: 500px;
+    }
+    .input2{
+      margin-left: 500px;
+    }
+    .logoimg{
+      margin-left: 590px;
+    }
+    .forget{
+      margin-left: 810px;
+    }
+  }
+
+  
+  @media (min-width: 1600px) and (max-width: 1679px){
+    .input1{
+      margin-left: 535px;
+    }
+    .input2{
+      margin-left: 535px;
+    }
+    .logoimg{
+      margin-left: 625px;
+    }
+    .forget{
+      margin-left: 845px;
+    }
+  }
+
+
+  
+  @media (min-width: 1680px) and (max-width: 1750px){
+    .input1{
+      margin-left: 565px;
+    }
+    .input2{
+      margin-left: 565px;
+    }
+    .logoimg{
+      margin-left: 655px;
+    }
+    .forget{
+      margin-left: 875px;
+    }
+  }
