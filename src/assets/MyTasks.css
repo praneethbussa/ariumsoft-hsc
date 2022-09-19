@@ -1,0 +1,112 @@
+.mytasks {
+    float: right;
+    width: 83%;
+    background-color: white;
+    border: transparent;
+    border-radius: 15px 0px 0px 15px;
+    margin-top: 25px; 
+}
+
+.title {
+    color: #001D65;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.line {
+    border: 1px solid #F1F1F1;
+    width: 150px;
+    height: 1px;
+    align-self: center;
+    margin-left: 10px;
+}
+
+#search {
+    margin-top: 20px;
+    height: 60px;
+    border: 1px solid #F1F1F1;
+    border-radius: 20px;
+    width: 40%;
+}
+
+.jobs {
+    
+    height: 589px;
+    margin-top: 30px;
+}
+
+.inner {
+    
+    height: 80px;
+    margin-bottom: 10px;
+}
+
+.jobtitle {
+    color: #0C0C0C;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.client {
+    color: #0C0C0C;
+    font-size: 14px;
+    font-weight: normal;
+}
+
+img {
+    margin-right: 10px;
+}
+
+.datetime {
+    color: #A2A2A2;
+    font-size: 12px;
+    font-weight: normal;
+}
+
+.jobdetails {
+   
+    height: 330px;
+    margin: 18px 0px 0px 20px;
+}
+
+.url {
+    color: #1339D8;
+    text-decoration: underline;
+}
+
+.detailscard {
+    color: #001D65;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+h5 {
+    color: #021668;
+    font-size: 16px;
+    font-weight: 300;
+}
+
+#save {
+    
+    height: 60px;
+    background-color: #021668;
+    border-radius: 10px;
+    margin: 20px 0px 0px 25px;
+    
+}
+
+#job1 {
+    border: 1px solid #021668;
+    border-radius: 10px;
+}
+
+h6{
+    color: #0C0C0C;
+    font-size: 16px;
+    font-weight: 400;
+    padding: 0px;
+}
+
+#title {
+    font-weight: 600;
+}

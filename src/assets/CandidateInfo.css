@@ -1,0 +1,145 @@
+.candidateInfo-page{
+    float: right;
+    width: 83%;
+    background-color: white;
+    border: transparent;
+    border-radius: 15px 0px 0px 15px;
+    margin-top: 25px; 
+    padding: 25px;
+    padding-bottom: 5rem;
+}
+
+.candid-text{
+    font-size: 20px;
+    font-family: 'Outfit';
+    font-weight: 600;
+    color: #001D65;
+}
+
+.contact-details, .job-prefer, .education-details, .notes{
+    font-size: 14px;
+    font-family: 'Outfit';
+    font-weight: 500;
+    color: #3AB8DA;
+    margin-top: 30px;
+}
+
+.full-name, .candid-id, .select-status,
+.candid-mobile, .candid-address1, .candid-address2{
+    font-size: 16px;
+    font-family: 'Outfit';
+    font-weight: 400;
+    color: #0C0C0C;
+}
+
+.contact-border{
+    margin-top: 20px;
+}
+
+.form-floating .form-control{
+    padding: 15px 10px 0px 10px !important;
+}
+
+.row-2{
+    margin-top: 10px;
+}
+
+.row-1{
+    margin-top: 20px;
+}
+
+.type-area textarea{
+    border: 1px solid #F1F1F1;
+    border-radius: 10px;
+    margin-top: 10px;
+    width: 60%;
+    font-size: 12px;
+    font-family: 'outfit';
+    font-weight: 400;
+    padding: 10px;
+    height: 10em;
+    color: #CCCCCC;
+}
+
+.resume{
+    margin-top: 20px;
+    font-size: 16px;
+    font-family: 'outfit';
+    font-weight: 400;
+    color: #CCCCCC;
+    border-style: dashed;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: white;
+    border-color: #CCCCCC;
+    width: 40%;
+}
+.resume-upload{
+    float: left;
+}
+
+#plus-icon{
+    margin-left: 20px;
+    background-color: white;
+    color: #0C0C0C;
+    float: right;
+    margin-top: 2px;
+}
+
+.format{
+    margin-top: 20px;
+    margin-left: 20px;
+    display: inline-flex;
+}
+.checking-box{
+    margin-top: 3px;
+}
+#check-box{
+    width: 15px;
+    height: 15px;
+    margin-right: 15px;
+}
+.format label{
+    font-size: 18px;
+    font-family: 'outfit';
+    font-weight: 400;
+    color: #0C0C0C;
+}
+
+.form-select{
+    border: 1px solid #F1F1F1 !important;
+}
+
+.cancel-btn{
+    font-size: 16px;
+    font-family: 'outfit';
+    font-weight: 400;
+    border-color: #021668;
+    background-color: white;
+    color: #021668;
+    border-radius: 10px;
+    margin-top: 80px;
+    padding: 10px;
+    width: 20%;
+}
+.saving-button{
+    font-size: 16px;
+    font-family: 'outfit';
+    font-weight: 400;
+    border-color: #021668;
+    background-color: white;
+    color: #021668;
+    border-radius: 10px;
+    float: right;
+    margin-top: 80px;
+    padding: 10px;
+    width: 20%;
+}
+.saving-button:hover{
+    background-color: #021668;
+    color: #fff;
+}
+.cancel-btn:hover{
+    background-color: #021668;
+    color: #fff;
+}

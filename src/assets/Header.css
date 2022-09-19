@@ -1,0 +1,116 @@
+.box2{
+    width: 80%;
+    height: 70px;
+    background-color: white;
+    border-radius: 20px 0px 0px 20px;
+    border: none;
+    float: right;
+    margin-top: -70px;
+}
+
+.imglogo{
+    width: 135px;
+    height: 66px;
+    margin-left: 70px;
+    margin-top: 25px;
+    background-color: #F1F1F1;
+    border: transparent;
+}
+
+#userIcon{
+    float: right;
+    margin-right: 70px;
+    margin-top: 18px;
+    background-color: #F1F1F1;
+    padding: 8px;
+    border: transparent;
+    border-radius: 5px;
+    height: 18px;
+}
+
+.box1{
+    width: 83%;
+    height: 70px;
+    background-color: white;
+    border-radius: 20px 0px 0px 20px;
+    border: none;
+    float: right;
+    margin-top: -70px;
+}
+
+.imglogo{
+    width: 135px;
+    height: 66px;
+    margin-left: 70px;
+    margin-top: 25px;
+    color: #F1F1F1;
+    border: transparent;
+}
+.settings{
+    float: right;
+    margin-right: 60px;
+    margin-top: 27px;
+    color: #021668;
+    font-size: 17px;
+}
+
+.notify{
+    float: right;
+    margin-right: 60px;
+    margin-top: 27px;
+    color: #021668;
+    font-size: 18px;
+}
+
+.img-profile{
+    float: right;
+    margin-right: 60px;
+    margin-top: 17px;
+    width: 36px;
+}
+
+.headerActive{
+    color: #F88022;
+}
+
+
+/* responsive */
+/* 
+@media (min-width: 1024px) and (max-width: 1440px) {
+    .imglogo{
+        margin-left: 35px;
+    }
+}
+
+@media (min-width: 1280px) and (max-width: 1350px){
+    .imglogo{
+        margin-left: 55px;
+    }
+}
+
+@media (min-width: 1360px) and (max-width: 1399px){
+    .imglogo{
+        margin-left: 55px;
+    }
+    .box1{
+        width: 82%;
+    }
+}
+
+@media (min-width: 1440px) and (max-width: 1599px){
+    .imglogo{
+        margin-left: 65px;
+    }
+    .box1{
+        width: 83%;
+    }
+}
+
+@media (min-width: 1600px) and (max-width: 1700px){
+    .imglogo{
+        margin-left: 60px;
+    }
+    .box1{
+        width: 83%;
+    }
+} */

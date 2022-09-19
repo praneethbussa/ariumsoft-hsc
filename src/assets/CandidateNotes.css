@@ -1,0 +1,77 @@
+.candidNotes-screen{
+    float: right;
+    width: 83%;
+    background-color: white;
+    border: transparent;
+    border-radius: 15px 0px 0px 15px;
+    margin-top: 25px; 
+    padding: 25px;
+}
+
+.note-point1{
+    font-size: 14px;
+    font-family: 'Outfit';
+    font-weight: 500;
+    color: #0C0C0C;
+}
+.note-point2{
+    font-size: 14px;
+    font-family: 'Outfit';
+    font-weight: 500;
+    color: #0C0C0C;
+    margin-top: 20px;
+}
+
+.text-notes textarea{
+    border: 1px solid #F1F1F1;
+    border-radius: 10px;
+    width: 60%;
+    font-size: 12px;
+    font-family: 'outfit';
+    font-weight: 400;
+    padding: 10px;
+    height: 10em;
+    color: #CCCCCC;
+    margin-top: 20px;
+}
+
+.hit-enter{
+    width: 50%;
+    float: right;
+    color: #CCCCCC;
+    margin-top: 10px;
+}
+
+.noteby-candidate{
+    font-size: 12px;
+    font-family: Arial;
+    font-style: italic; 
+    color: #CCCCCC;
+    float: right;
+    margin-right: 15px;
+}
+.note-posteddate{
+    font-size: 12px;
+    font-family: Arial;
+    font-style: italic; 
+    color: #CCCCCC;
+    float: right;
+    margin-right: 15px;
+}
+.note-postedtime{
+    font-size: 12px;
+    font-family: Arial;
+    font-style: italic; 
+    color: #CCCCCC;
+    float: right;
+}
+
+#tick-mark{
+    color: #2DCC67;
+    font-size: 25px;
+    margin-right: 10px;
+}
+#cross-mark{
+    color: #CCCCCC;
+    font-size: 25px;
+}
