@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
 
-import Search from '../../images/Search.svg';
-import User from '../../images/User.svg';
-import Edit from '../../images/Edit.svg';
-import Delete from '../../images/Delete.svg';
-import Arrowright from '../../images/Arrowright.svg';
-import Dropdownicon from '../../images/Dropdownicon.svg';
-import Userlarge from '../../images/Userlarge.svg';
+import Search from '../../Images/Search.svg';
+import User from '../../Images/User.svg';
+import Edit from '../../Images/Edit.svg';
+import Delete from '../../Images/Delete.svg';
+import Arrowright from '../../Images/Arrowright.svg';
+import Dropdownicon from '../../Images/Dropdownicon.svg';
+import Userlarge from '../../Images/Userlarge.svg';
 
 import DeleteTask from './DeleteTask';
 import { Button } from 'react-bootstrap';

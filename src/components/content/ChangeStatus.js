@@ -1,11 +1,11 @@
 import React from 'react'
 
 import './ChangeStatus.css'
-import Person from '../../images/Person.svg';
-import Tick from '../../images/Tick.svg';
-import Edit from '../../images/Edit.svg';
-import Line from '../../images/Line.svg';
-import File from '../../images/File.svg';
+import Person from '../../Images/Person.svg';
+import Tick from '../../Images/Tick.svg';
+import Edit from '../../Images/Edit.svg';
+import Line from '../../Images/Line.svg';
+import File from '../../Images/File.svg';
 import { Link } from 'react-router-dom';
 
 export default function ChangeStatus() {

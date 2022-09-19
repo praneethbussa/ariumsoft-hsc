@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
 
-import Search from '../../images/Search.svg';
-import User from '../../images/User.svg';
-import Delete from '../../images/Delete.svg';
+import Search from '../../Images/Search.svg';
+import User from '../../Images/User.svg';
+import Delete from '../../Images/Delete.svg';
 
 
 import './MyTasks.css'

@@ -12,8 +12,11 @@ import Navbar from "./Components/Navbar";
 import CandidateInfo from "./Components/CandidateInfo";
 import Candidates from "./Components/Candidates";
 import Notifications from "./Components/Notifications";
-import MyTasks from "./Components/MyTasks";
-import CreateJobOpening from "./Components/CreateJobOpening";
+import MyTasks from "./Components/content/MyTasks";
+import ChangeStatus from "./Components/content/ChangeStatus";
+import SaveJob from "./Components/content/SaveJob";
+import JobOpening from "./Components/content/JobOpening";
+import CreateJobOpening from "./Components/content/CreateJobOpening";
 import RecruiterDashboard from "./Components/RecruiterDashboard";
 
 
@@ -33,7 +36,13 @@ const App = () => {
         <Route path="/myProfile" element={<MyProfile />} />
         <Route path="/settings/changePassword" element={<ChangePassword />} />
         <Route path="/candidates" element={<Candidates />} />
-        <Route path="/candidates/addCandidate" element={<CandidateInfo />} />
+        <Route path="/candidates/addCandidate" element={<CandidateInfo />} /> 
+        <Route path='/changestatus' element={<ChangeStatus/>}></Route>
+        <Route path='/savejob' element={<SaveJob/>}></Route>
+        <Route path='/searchjobopening' element={<JobOpening/>}></Route>
+
+
+
       </Routes>
       
     </>
