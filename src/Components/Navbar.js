@@ -5,12 +5,11 @@ import Mytasks from '../Images/Mytasks.svg';
 import Jobopenings from '../Images/Jobopenings.svg';
 import Candidates from '../Images/Candidates.svg';
 import { Link} from 'react-router-dom';
-import "../assets/Navbar.css";
+import "./Navbar.css"
 
 export default function Navbar() {
   return (
-    // <div className='col-sm-2 align-items-sm-start' style={{marginRight: 0, display:'inline-block'}}>
-     <div className='navbar-container'>
+     <div className='col-md-2 align-items-sm-start' style={{paddingLeft: 0}}>
         <div className="nav flex-column bg-white sidenav">
             <div className="nav-item">
                 <Link to="/" id="dashlink" className="nav-link"><img src={Dashboard} alt={'dashboard'} className="link"/>Dashboard</Link>

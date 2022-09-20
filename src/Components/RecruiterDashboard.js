@@ -35,7 +35,7 @@ const RecruitDashboard = () => {
   return (
     <>
       {/* <CommonRouteHelper routes={recruitTabs}/> */}
-      <div className="recruiter-page">
+      <div className="col-md-10 recruiter-page">
         <p className="recruiter-name">Hello John Williams!</p>
     <Row>
       <Col md={4}>

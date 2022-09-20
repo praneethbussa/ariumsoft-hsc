@@ -1,0 +1,43 @@
+.sidenav{
+    
+    height: 100%;
+    border-radius: 0px 20px 20px 0px;
+    padding: 32px 0px 0px 18px;
+    font-size: 16px;
+    font-weight: normal;
+}
+
+#dashlink{
+    color: #021668;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    margin-left: 18px; 
+}
+#navlink {
+    color: #0C0C0C;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: normal;
+    margin-left: 18px;
+}
+
+#navlink:hover, #dashlink:hover {
+    color: #F88022;
+}
+
+.nav-link:active, #dashlink:active {
+    color: #F88022;
+}
+
+.link {
+    padding-right: 8px;
+}
+
+#bootstrap-overrides #dash {
+    color: #0C0C0C !important;
+}
+
+#dash:active {
+    color: #F88022 !important;
+}

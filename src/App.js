@@ -23,6 +23,8 @@ const App = () => {
   return (
     <>
       <Header isLogin/>
+      <div className="container-fluid">
+        <div className="row" style={{marginTop:'25px'}}>
       <Navbar />
       <Routes>
         <Route path="/" element={<Home isLogin={true} />} />
@@ -43,6 +45,8 @@ const App = () => {
 
 
       </Routes>
+      </div>
+      </div>
       
     </>
   );
