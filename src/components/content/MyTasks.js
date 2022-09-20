@@ -6,7 +6,7 @@ import User from '../../Images/User.svg';
 import Delete from '../../Images/Delete.svg';
 
 
-import './MyTasks.css'
+import './MyTasks.css';
 import DeleteTask from './DeleteTask';
 import { Button } from 'react-bootstrap';
 

@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import "./App.css";
-import "./assets/Header1.css";
 import { Route, Routes } from "react-router-dom";
 import Home from "./Components/Home";
 import Settings from "./Components/Settings";
@@ -40,7 +39,7 @@ const App = () => {
         <Route path='/changestatus' element={<ChangeStatus/>}></Route>
         <Route path='/savejob' element={<SaveJob/>}></Route>
         <Route path='/searchjobopening' element={<JobOpening/>}></Route>
-
+        <Route path='/changestatus' element={<ChangeStatus />}></Route>
 
 
       </Routes>

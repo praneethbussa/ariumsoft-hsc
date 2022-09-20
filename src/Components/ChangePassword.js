@@ -49,17 +49,17 @@ const ChangePassword = () => {
       </Row>
       <Row>
         <Col md={4}>
-        <ShowHideLabel name="password" label="Type Old Password" placeholder="Password"/>
+        <ShowHideLabel name="password" label="Type Old Password" placeholder="Type Old Password"/>
         </Col>
       </Row>
       <Row>
         <Col md={4}>
-        <ShowHideLabel name="password" label="Enter New Password" placeholder="Password"/>
+        <ShowHideLabel name="password" label="Enter New Password" placeholder="Enter New Password"/>
         </Col>
       </Row>
       <Row>
         <Col md={4}>
-        <ShowHideLabel name="password" label="Confirm New Password" placeholder="Password"/>
+        <ShowHideLabel name="password" label="Confirm New Password" placeholder="Confirm New Password"/>
         </Col>
       </Row>
     </div>
