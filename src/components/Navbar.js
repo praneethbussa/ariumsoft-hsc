@@ -5,7 +5,6 @@ import Mytasks from '../Images/Mytasks.svg';
 import Jobopenings from '../Images/Jobopenings.svg';
 import Candidates from '../Images/Candidates.svg';
 import { Link} from 'react-router-dom';
-import "../assets/Navbar.css";
 
 export default function Navbar() {
   return (
