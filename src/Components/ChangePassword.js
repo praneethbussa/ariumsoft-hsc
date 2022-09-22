@@ -34,7 +34,7 @@ const ShowHideLabel = ({name, label, placeholder}) => {
 
 const ChangePassword = () => {
   return (
-    <div className="pwd-change">
+    <div className="col-md-10 pwd-change">
       <Row>
         <Col md={10}>
           <p className="pwd-text">Change Password</p>

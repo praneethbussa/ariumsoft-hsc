@@ -7,7 +7,7 @@ import MyProfile from './MyProfile';
 import ChangePassword from './ChangePassword';
 const Settings = () => {
   return (
-        <div className='setting-screen'>
+        <div className='col-md-10 setting-screen'>
             <Routes>
         
         <Route path="settings/myProfile" element={<MyProfile />} />

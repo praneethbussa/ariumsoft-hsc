@@ -1,10 +1,7 @@
 .candidateInfo-page{
-    float: right;
-    width: 83%;
     background-color: white;
     border: transparent;
     border-radius: 15px 0px 0px 15px;
-    margin-top: 25px; 
     padding: 25px;
     padding-bottom: 5rem;
 }
@@ -24,24 +21,7 @@
     margin-top: 30px;
 }
 
-.full-name, .candid-id, .select-status,
-.candid-mobile, .candid-address1, .candid-address2{
-    font-size: 16px;
-    font-family: 'Outfit';
-    font-weight: 400;
-    color: #0C0C0C;
-}
-
 .contact-border{
-    margin-top: 20px;
-}
-
-
-.row-2{
-    margin-top: 10px;
-}
-
-.row-1{
     margin-top: 20px;
 }
 
@@ -102,20 +82,13 @@
     color: #0C0C0C;
 }
 
- /* .form-select{
-    border: 1px solid #F1F1F1 !important;
-}
-/* .form-floating .form-control{
-    border: 1px solid #F1F1F1;
-}  */
  .form-floating .form-control{
     border: 1px solid #F1F1F1;
 } 
+
 .form-floating .form-select{
     border: 1px solid #F1F1F1;
 }
-
-
 
 .cancel-btn{
     font-size: 16px;

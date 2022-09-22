@@ -5,7 +5,7 @@ import "../assets/MyProfile.css";
 
 const MyProfile = () => {
   return (
-        <div className='profile-screen'>
+        <div className='col-md-10 profile-screen'>
             <p className='profile'>My Profile</p>
             <Row>
             <Col md={4}>

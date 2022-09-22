@@ -4,7 +4,7 @@ import { Row,Col } from 'react-bootstrap';
 
 const CandidateNotes = () => {
   return (
-    <div className='candidNotes-screen'>
+    <div className='col-md-10 candidNotes-screen'>
         <Row>
             <Col md={6}>
         <p className='note-point1'>

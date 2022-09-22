@@ -69,10 +69,10 @@ const RecruitDashboard = () => {
 
     <Row>
       <Col md={12}>
-    <Row>
+    <Row style={{marginTop:15}}>
       <Col md={4}>
-    <Row>
-          <div className="task1">
+    
+          <div className="task">
             <div className="jobid">JO001 - Job Requirement for Tesla</div>
     <Row>
       <Col md={2}><i className="fa-solid fa-circle-user" id="user-icon"></i></Col>
@@ -81,9 +81,8 @@ const RecruitDashboard = () => {
       <Col md={2}><div className="time">2:04pm</div></Col>
     </Row>
           </div>
-    </Row>
-    <Row>
-          <div className="task2">
+   
+          <div className="task">
           <div className="jobid">JO001 - Job Requirement for Tesla</div>
     <Row>
       <Col md={2}><i className="fa-solid fa-circle-user" id="user-icon"></i></Col>
@@ -92,9 +91,9 @@ const RecruitDashboard = () => {
       <Col md={2}><div className="time">2:04pm</div></Col>
     </Row>                 
           </div>
-    </Row>
-    <Row>
-         <div className="task3">
+  
+  
+         <div className="task">
            <div className="jobid">JO001 - Job Requirement for Tesla</div>
     <Row>
       <Col md={2}><i className="fa-solid fa-circle-user" id="user-icon"></i></Col>
@@ -103,9 +102,9 @@ const RecruitDashboard = () => {
       <Col md={2}><div className="time">2:04pm</div></Col>
     </Row>                 
           </div>
-    </Row>
-    <Row>
-         <div className="task4">
+    
+    
+         <div className="task">
            <div className="jobid">JO001 - Job Requirement for Tesla</div>
     <Row>
       <Col md={2}><i className="fa-solid fa-circle-user" id="user-icon"></i></Col>
@@ -114,9 +113,8 @@ const RecruitDashboard = () => {
       <Col md={2}><div className="time">2:04pm</div></Col>
     </Row>                 
           </div>
-    </Row>
-    <Row>
-         <div className="task5">
+    
+         <div className="task">
            <div className="jobid">JO001 - Job Requirement for Tesla</div>
     <Row>
       <Col md={2}><i className="fa-solid fa-circle-user" id="user-icon"></i></Col>
@@ -125,13 +123,12 @@ const RecruitDashboard = () => {
       <Col md={2}><div className="time">2:04pm</div></Col>
     </Row>                 
           </div>
-    </Row>
       </Col>
 
     
       <Col md={4}>
-    <Row>
-          <div className="Job1">
+   
+          <div className="Job">
               <div className="jobid">JO001 - Job Requirement for Tesla</div>
     <Row>
       <Col md={2}><i className="fa-solid fa-circle-user" id="user-icon"></i></Col>
@@ -140,9 +137,9 @@ const RecruitDashboard = () => {
       <Col md={2}><div className="time">2:04pm</div></Col>
     </Row>
           </div>
-    </Row>
-    <Row>
-          <div className="Job2">
+   
+    
+          <div className="Job">
               <div className="jobid">JO001 - Job Requirement for Tesla</div>
     <Row>
       <Col md={2}><i className="fa-solid fa-circle-user" id="user-icon"></i></Col>
@@ -151,9 +148,8 @@ const RecruitDashboard = () => {
       <Col md={2}><div className="time">2:04pm</div></Col>
     </Row>
           </div>
-    </Row>
-    <Row>
-          <div className="Job3">
+    
+          <div className="Job">
               <div className="jobid">JO001 - Job Requirement for Tesla</div>
     <Row>
       <Col md={2}><i className="fa-solid fa-circle-user" id="user-icon"></i></Col>
@@ -162,9 +158,8 @@ const RecruitDashboard = () => {
       <Col md={2}><div className="time">2:04pm</div></Col>
     </Row>
           </div>
-    </Row>
-    <Row>
-          <div className="Job4">
+   
+          <div className="Job">
               <div className="jobid">JO001 - Job Requirement for Tesla</div>
     <Row>
       <Col md={2}><i className="fa-solid fa-circle-user" id="user-icon"></i></Col>
@@ -173,9 +168,8 @@ const RecruitDashboard = () => {
       <Col md={2}><div className="time">2:04pm</div></Col>
     </Row>
           </div>
-    </Row>
-    <Row>
-          <div className="Job5">
+   
+          <div className="Job">
               <div className="jobid">JO001 - Job Requirement for Tesla</div>
     <Row>
       <Col md={2}><i className="fa-solid fa-circle-user" id="user-icon"></i></Col>
@@ -184,67 +178,76 @@ const RecruitDashboard = () => {
       <Col md={2}><div className="time">2:04pm</div></Col>
     </Row>
           </div>
-    </Row>
       </Col>
 
 
       <Col md={4}>
+      <div className="Candidate">
     <Row>
-        <div className="Candidate1">
-               <div className="candid-status">Interview Scheduled</div>
-      <Col>
+               {/* <div className="col-12 candid-status">Interview Scheduled</div> */}
+      <Col md={3}>
           <span className="icon1"><i className="fa-solid fa-circle-user" id="candidate-icon"></i>
           <img src={GreenTick} className="tick-img" alt="..." /></span></Col>
-          <Col>
+          <Col md={9}>
+          <div className="candid-status">Interview Scheduled</div>
       <div className="candidateId1">C001 - Robert Stuart</div>
-      </Col>
               <div className="candidate-role">Scrum master</div>
-        </div>
+              </Col>
     </Row>
-    {/* <Row>
-        <div className="Candidate2">
-               <div className="candid-status">Interview Scheduled</div>
-      <Col md={2}>
-          <i className="fa-solid fa-circle-user" id="candidate-icon"></i>
-          <img src={GreenTick} className="tick-img" alt="..." />
-      </Col>
-       <Col><div className="candidateId2">C002 - Venugopala Mutth..</div></Col>
+    </div>
+
+
+    <div className="Candidate">
+    <Row>
+      <Col md={3}>
+          <span className="icon1"><i className="fa-solid fa-circle-user" id="candidate-icon"></i>
+          <img src={GreenTick} className="tick-img" alt="..." /></span></Col>
+          <Col md={9}>
+          <div className="candid-status">Interview Scheduled</div>
+      <div className="candidateId1">C002 - Venugopala Mutth..</div>
               <div className="candidate-role">UI/UX designer</div>
-        </div>
+              </Col>
     </Row>
+    </div>
+
+    <div className="Candidate">
     <Row>
-        <div className="Candidate3">
-               <div className="candid-status">In Process</div>
-      <Col md={2}>
-          <i className="fa-solid fa-circle-user" id="candidate-icon"></i>
-          <img src={GreenTick} className="tick-img" alt="..." />
-      </Col>
-      <Col><div className="candidateId3">C003 - James Addison</div></Col>
+      <Col md={3}>
+          <span className="icon1"><i className="fa-solid fa-circle-user" id="candidate-icon"></i>
+          <img src={GreenTick} className="tick-img" alt="..." /></span></Col>
+          <Col md={9}>
+          <div className="candid-status">In Process</div>
+      <div className="candidateId1">C003 - James Addison</div>
               <div className="candidate-role">Scrum master</div>
-        </div>
+              </Col>
     </Row>
+    </div>
+
+    <div className="Candidate">
     <Row>
-        <div className="Candidate4">
-               <div className="candid-status">Rejected</div>
-      <Col md={2}>
-          <i className="fa-solid fa-circle-user" id="candidate-icon"></i>
-          <img src={RedCross} className="tick-img" alt="..." />
-      </Col>
-      <Col><div className="candidateId4">C004 - Adarsh Singh</div></Col>
-              <div className="candidate-role">Android Developer</div>
-        </div>
+      <Col md={3}>
+          <span className="icon1"><i className="fa-solid fa-circle-user" id="candidate-icon"></i>
+          <img src={GreenTick} className="tick-img" alt="..." /></span></Col>
+          <Col md={9}>
+          <div className="candid-status">Available</div>
+      <div className="candidateId1">C004 - Adarsh Singh</div>
+              <div className="candidate-role">Android developer</div>
+              </Col>
     </Row>
+    </div>
+
+    <div className="Candidate">
     <Row>
-        <div className="Candidate5">
-               <div className="candid-status">Available</div>
-      <Col md={2}>
-          <i className="fa-solid fa-circle-user" id="candidate-icon"></i>
-          <img src={GreenTick} className="tick-img" alt="..." />
-      </Col>
-      <Col><div className="candidateId5">C005 - Steve Williams</div></Col>
+      <Col md={3}>
+          <span className="icon1"><i className="fa-solid fa-circle-user" id="candidate-icon"></i>
+          <img src={RedCross} className="tick-img" alt="..." /></span></Col>
+          <Col md={9}>
+          <div className="candid-status">Rejected</div>
+      <div className="candidateId1">C005 - Steve Williams</div>
               <div className="candidate-role">IOS developer</div>
-        </div>
-    </Row> */}
+              </Col>
+    </Row>
+    </div>
       </Col>
     </Row>
       </Col>

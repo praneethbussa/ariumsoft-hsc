@@ -5,7 +5,7 @@ import "../assets/CandidateStatus.css";
 const CandidateStatus = () => {
   
   return (
-      <div className='status-screen'>
+      <div className='col-md-10 status-screen'>
     <div className='status-text'>Status</div>
 
     <div class="container py-5">

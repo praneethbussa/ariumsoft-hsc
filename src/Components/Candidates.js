@@ -11,7 +11,7 @@ import { Link } from 'react-router-dom';
 
 const Candidates = () => {
   return (
-        <div className='candidate-screen'>
+        <div className='col-md-10 candidate-screen'>
             <Routes>
         <Route path="/candidates" element={<Candidates />} />
         <Route path="/candidates/addCandidate" element={<CandidateInfo />} />
@@ -62,114 +62,159 @@ const Candidates = () => {
     </Row>
 
    <div className='candidate-block1'>
+          <Row>
+         <Col md={4}>
+      <div className="Candidate">
     <Row>
-        <Col md={4}>
-          <div className="Candidate2">
-          <div className="candid-status">In Process</div>
-             <Col md={2}><i className="fa-solid fa-circle-user" id="candidate-icon"></i>
-             <img src={GreenTick} className="tick-img" alt="..." /></Col>
-             <Col><div className="candidateId3">C003 - James Addison</div></Col>
-            <div className="candidate-role">Scrum master</div>
-            <div className='candid-experience'>5.2 years Experience</div>
-            <Row>
-            <Col>
+      <Col md={3}>
+          <span className="icon1"><i className="fa-solid fa-circle-user" id="candidate-icon"></i>
+          <img src={GreenTick} className="tick-img" alt="..." /></span></Col>
+          <Col md={9}>
+          <div className="candid-status">Interview Scheduled</div>
+      <div className="candidateId1">C001 - Melvin Jacob</div>
+              <div className="candidate-role">Interaction Designer</div>
+              </Col>
+        <Col>
+        <div className='candid-experience'>5.2 years Experience</div>
+        </Col>
+        <Row>
+        <Col>
             <span className='recruit'>Williams</span>
             <span className='exclusive'>Exclusive</span>
-            <span className='until-date'>Until 22/09/2022</span>
+            <span className='until-date'>Until 5/09/2022</span>
             </Col>
             </Row>
-            </div>
-          </Col>
-          <Col md={4}>
-          <div className="Candidate2">
-          <div className="candid-status">In Process</div>
-             <Col md={2}><i className="fa-solid fa-circle-user" id="candidate-icon"></i>
-             <img src={GreenTick} className="tick-img" alt="..." /></Col>
-             <Col><div className="candidateId3">C003 - James Addison</div></Col>
-            <div className="candidate-role">Scrum master</div>
-            <div className='candid-experience'>5.2 years Experience</div>
-            <Row>
-            <Col>
-            <span className='recruit'>Williams</span>
-            <span className='exclusive'>Exclusive</span>
-            <span className='until-date'>Until 22/09/2022</span>
-            </Col>
-            </Row>
-            </div>
-          </Col>
-          <Col md={4}>
-          <div className="Candidate3">
-          <div className="candid-status">In Process</div>
-             <Col md={2}><i className="fa-solid fa-circle-user" id="candidate-icon"></i>
-             <img src={GreenTick} className="tick-img" alt="..." /></Col>
-             <Col><div className="candidateId3">C003 - James Addison</div></Col>
-            <div className="candidate-role">Scrum master</div>
-            <div className='candid-experience'>5.2 years Experience</div>
-            <Row>
-            <Col>
-            <span className='recruit'>Williams</span>
-            <span className='exclusive'>Exclusive</span>
-            <span className='until-date'>Until 22/09/2022</span>
-            </Col>
-            </Row>
-            </div>
-          </Col>  
     </Row>
     </div>
+    </Col>
+
+    <Col md={4}>
+      <div className="Candidate">
+    <Row>
+      <Col md={3}>
+          <span className="icon1"><i className="fa-solid fa-circle-user" id="candidate-icon"></i>
+          <img src={GreenTick} className="tick-img" alt="..." /></span></Col>
+          <Col md={9}>
+          <div className="candid-status">Interview Scheduled</div>
+      <div className="candidateId1">C002 - Adarsh Singh</div>
+              <div className="candidate-role">Scrum master</div>
+              </Col>
+        <Col>
+        <div className='candid-experience'>5.2 years Experience</div>
+        </Col>
+        <Row>
+        <Col>
+            <span className='recruit'>Williams</span>
+            <span className='exclusive'>Exclusive</span>
+            <span className='until-date'>Until 22/09/2022</span>
+            </Col>
+            </Row>
+    </Row>
+    </div>
+    </Col>
+
+    <Col md={4}>
+      <div className="Candidate">
+    <Row>
+      <Col md={3}>
+          <span className="icon1"><i className="fa-solid fa-circle-user" id="candidate-icon"></i>
+          <img src={GreenTick} className="tick-img" alt="..." /></span></Col>
+          <Col md={9}>
+          <div className="candid-status">Interview Scheduled</div>
+      <div className="candidateId1">C001 - Robert Stuart</div>
+              <div className="candidate-role">Scrum master</div>
+              </Col>
+        <Col>
+        <div className='candid-experience'>5.2 years Experience</div>
+        </Col>
+        <Row>
+        <Col>
+            <span className='recruit'>Williams</span>
+            <span className='exclusive'>Exclusive</span>
+            <span className='until-date'>Until 22/09/2022</span>
+            </Col>
+            </Row>
+    </Row>
+    </div>
+    </Col>
+    </Row>
     <div className='candidate-block2'>
     <Row>
-        <Col md={4}>
-          <div className="Candidate2">
-          <div className="candid-status">In Process</div>
-             <Col md={2}><i className="fa-solid fa-circle-user" id="candidate-icon"></i>
-             <img src={GreenTick} className="tick-img" alt="..." /></Col>
-             <Col><div className="candidateId3">C003 - James Addison</div></Col>
-            <div className="candidate-role">Scrum master</div>
-            <div className='candid-experience'>5.2 years Experience</div>
-            <Row>
-            <Col>
+    <Col md={4}>
+      <div className="Candidate">
+    <Row>
+      <Col md={3}>
+          <span className="icon1"><i className="fa-solid fa-circle-user" id="candidate-icon"></i>
+          <img src={GreenTick} className="tick-img" alt="..." /></span></Col>
+          <Col md={9}>
+          <div className="candid-status">Interview Scheduled</div>
+      <div className="candidateId1">C001 - Robert Stuart</div>
+              <div className="candidate-role">Scrum master</div>
+              </Col>
+        <Col>
+        <div className='candid-experience'>5.2 years Experience</div>
+        </Col>
+        <Row>
+        <Col>
             <span className='recruit'>Williams</span>
             <span className='exclusive'>Exclusive</span>
             <span className='until-date'>Until 22/09/2022</span>
             </Col>
             </Row>
-            </div>
-          </Col>
-          <Col md={4}>
-          <div className="Candidate2">
-          <div className="candid-status">In Process</div>
-             <Col md={2}><i className="fa-solid fa-circle-user" id="candidate-icon"></i>
-             <img src={RedCross} className="tick-img" alt="..." /></Col>
-             <Col><div className="candidateId3">C003 - James Addison</div></Col>
-            <div className="candidate-role">Scrum master</div>
-            <div className='candid-experience'>5.2 years Experience</div>
-            <Row>
-            <Col>
-            <span className='recruit'>Williams</span>
-            <span className='exclusive'>Exclusive</span>
-            <span className='until-date'>Until 22/09/2022</span>
-            </Col>
-            </Row>
-            </div>
-          </Col>
-          <Col md={4}>
-          <div className="Candidate3">
-          <div className="candid-status">In Process</div>
-             <Col md={2}><i className="fa-solid fa-circle-user" id="candidate-icon"></i>
-             <img src={GreenTick} className="tick-img" alt="..." /></Col>
-             <Col><div className="candidateId3">C003 - James Addison</div></Col>
-            <div className="candidate-role">Scrum master</div>
-            <div className='candid-experience'>5.2 years Experience</div>
-            <Row>
-            <Col>
-            <span className='recruit'>Williams</span>
-            <span className='exclusive'>Exclusive</span>
-            <span className='until-date'>Until 22/09/2022</span>
-            </Col>
-            </Row>
-            </div>
-          </Col>  
     </Row>
+    </div>
+    </Col>
+        
+    <Col md={4}>
+      <div className="Candidate">
+    <Row>
+      <Col md={3}>
+          <span className="icon1"><i className="fa-solid fa-circle-user" id="candidate-icon"></i>
+          <img src={RedCross} className="tick-img" alt="..." /></span></Col>
+          <Col md={9}>
+          <div className="candid-status">Interview Scheduled</div>
+      <div className="candidateId1">C001 - Robert Stuart</div>
+              <div className="candidate-role">Scrum master</div>
+              </Col>
+        <Col>
+        <div className='candid-experience'>5.2 years Experience</div>
+        </Col>
+        <Row>
+        <Col>
+            <span className='recruit'>Williams</span>
+            <span className='exclusive'>Exclusive</span>
+            <span className='until-date'>Until 22/09/2022</span>
+            </Col>
+            </Row>
+    </Row>
+    </div>
+    </Col>
+    <Col md={4}>
+      <div className="Candidate">
+    <Row>
+      <Col md={3}>
+          <span className="icon1"><i className="fa-solid fa-circle-user" id="candidate-icon"></i>
+          <img src={GreenTick} className="tick-img" alt="..." /></span></Col>
+          <Col md={9}>
+          <div className="candid-status">Interview Scheduled</div>
+      <div className="candidateId1">C001 - Robert Stuart</div>
+              <div className="candidate-role">Scrum master</div>
+              </Col>
+        <Col>
+        <div className='candid-experience'>5.2 years Experience</div>
+        </Col>
+        <Row>
+        <Col>
+            <span className='recruit'>Williams</span>
+            <span className='exclusive'>Exclusive</span>
+            <span className='until-date'>Until 22/09/2022</span>
+            </Col>
+            </Row>
+    </Row>
+    </div>
+    </Col>
+    </Row>
+    </div>
     </div>
     </div>
     

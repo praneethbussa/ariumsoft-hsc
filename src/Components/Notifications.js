@@ -4,7 +4,7 @@ import { Row,Col } from 'react-bootstrap';
 
 const Notifications = () => {
   return (
-    <div className='notification-screen'>
+    <div className='col-md-10 notification-screen'>
         <div className='notification-text'>Notifications</div>
     <Row>
         <Col md={4}>
