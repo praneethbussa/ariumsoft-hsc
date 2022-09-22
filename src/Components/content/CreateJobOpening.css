@@ -4,6 +4,21 @@
     color: #3AB8DA;
 }
 
+.form-floating .form-control {
+    border: 1px solid #F1F1F1;
+    border-radius: 10px;
+}
+
+.form-floating .form-select {
+    border: 1px solid #F1F1F1;
+    border-radius: 10px;
+}
+
+#basic-addon2 {
+    border: 1px solid #F1F1F1;
+    border-radius: 0px 10px 10px 0px;
+}
+
 .skillname {
     color: #A2A2A2;
     font-weight: normal;

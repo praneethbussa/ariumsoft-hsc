@@ -1,17 +1,33 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { Link } from 'react-router-dom';
 
-import './ChangeStatus.css'
 import Person from '../../Images/Person.svg';
 import Tick from '../../Images/Tick.svg';
 import Edit from '../../Images/Edit.svg';
 import Line from '../../Images/Line.svg';
 import File from '../../Images/File.svg';
-import { Link } from 'react-router-dom';
+
+import SaveJob from './SaveJob';
+import './ChangeStatus.css';
 
 export default function ChangeStatus() {
-  return (
-    <div className='col-sm-10 mx-4'>
-        <div id='content' className='bg-white px-4'>
+
+    const [show, setShow] = useState(true);
+    const hideButton = ()=>{
+        setShow(false);
+    }
+    const [isShown, setIsShown] = useState(false);
+    const showContent = ()=> {
+        setIsShown(true);
+    };
+    const hideContent = ()=>{
+        setIsShown(false);
+        setShow(true);
+    };
+
+    return (
+        <div className='col-sm-10'>
+            <div id='content' className='bg-white px-4'>
                 <div className='d-flex flex-row position-relative'>
                     <div className='d-flex flex-row'>
                         <div className='position-relative'>
@@ -21,10 +37,19 @@ export default function ChangeStatus() {
                         <div id='title' className='mx-2'>Melvin Jacob</div> 
                         <img className='edit' src={Edit} alt={'User'}/> 
                     </div>
-                    <Link to={'/savejob'} id='button' className='btn btn-primary px-4 py-3 position-absolute top-0 end-0'>Change Status</Link>  
+                    {isShown && (
+                        <div className='w-25 position-absolute top-0 end-0 d-flex flex-row'>
+                            <button onClick={hideContent} id='cancel' className='bg-white w-100 mx-2 btn btn-primary px-4 py-3'>Cancel</button>  
+                            <Link to={'/'} id='button' className='w-100 btn btn-primary px-4 py-3'>Save</Link>
+                        </div>    
+                    )}
+                    {show && (
+                        <button onClick={() => {hideButton(); showContent();}} id='button' className='btn btn-primary px-4 py-3 position-absolute top-0 end-0'>Change Status</button>
+                    )}    
                 </div>
                 <div id='role'>Interaction Designer</div>
                 <div className='my-2 status'>Available</div>
+                {isShown && <SaveJob />}
                 <div className='my-1 head d-flex flex-row'>
                     <div className='active col-1'>Profile</div>
                     <div className='col-1'>Status</div>
@@ -65,7 +90,7 @@ export default function ChangeStatus() {
                     <img className='file' src={File} alt={'File'}/> 
                     design_portfolio.pdf
                 </div>
+            </div>
         </div>
-    </div>
-  )
+    )
 }

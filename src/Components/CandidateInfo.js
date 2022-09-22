@@ -134,7 +134,7 @@ const CandidateInfo = () => {
             </Link>
           </div>
           <div className="col-md-3">
-            <Link to={"/candidates"}>
+            <Link to={"/changestatus"}>
               <button type="button" className="saving-button">
                 Save
               </button>
