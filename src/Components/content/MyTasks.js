@@ -14,10 +14,10 @@ export default function MyTasks() {
     const [modalShow, setModalShow] = useState(false);
     
     return (
-        <div className='col-md-10'>
+        <div className='col-md-10' style={{paddingRight:"0px"}}>
             <div className='bg-white pb-5 pt-4 px-4 content'>
                 <div className='d-flex flex-row'>
-                    <h5 className='headings'>MyTasks</h5>
+                    <h5 className='headings'>My Tasks</h5>
                     <div className='line'></div>    
                 </div>
                 <div id='search' className="mx-2 px-3 d-flex flex-row position-relative">
@@ -92,7 +92,7 @@ export default function MyTasks() {
                                     <div className='my-2 subheadings'>Positions to be filled</div>
                                     <div className=' details'>12</div>
                                 </div>
-                                <Link to={"/createjobopening"} className="mt-4 btn btn-primary col-lg-5 d-flex align-items-center justify-content-center" id="save">Create Job Opening</Link>
+                                <Link to={"/createjobopening"} className="mt-4 btn btn-primary col-lg-5 d-flex align-items-center justify-content-center" id="createjob">Create Job Opening</Link>
                             </div>
                         </div>
                     </div>

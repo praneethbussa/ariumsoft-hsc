@@ -86,8 +86,9 @@ img {
     font-weight: 500;
 }
 
-#save {
-    
+#createjob {
+    font-size: 16px;
+    font-weight: 600;
     width: 50%;
     height: 60px;
     background-color: #021668;

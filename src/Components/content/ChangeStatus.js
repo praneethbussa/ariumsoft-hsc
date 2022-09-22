@@ -64,7 +64,7 @@ export default function ChangeStatus() {
                 <div>5.2 years</div>
                 <div className='heading'>Skills</div>
                 <div className='my-2 d-flex flex-row'>
-                    <div className='skills mx-1 rounded-pill px-2 d-flex align-items-center'>Adobe Suite</div>
+                    <div className='skills rounded-pill px-2 d-flex align-items-center' style={{marginRight:"4px"}}>Adobe Suite</div>
                     <div className='skills mx-1 rounded-pill px-2 d-flex align-items-center'>Interaction</div>
                     <div className='skills mx-1 rounded-pill px-2 d-flex align-items-center'>Information Architecture</div>
                     <div className='skills mx-1 rounded-pill px-2 d-flex align-items-center'>Layout Design</div>
