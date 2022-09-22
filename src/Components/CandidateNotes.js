@@ -1,11 +1,19 @@
-import React from 'react';
-import "../assets/CandidateNotes.css";
+import React from 'react'
 import { Row,Col } from 'react-bootstrap';
+import Line from '../Images/Line.svg';
 
-const CandidateNotes = () => {
+import '../assets/CandidateNotes.css';
+
+export default function CandidateNotes() {
   return (
-    <div className='col-md-10 candidNotes-screen'>
-        <Row>
+    <div>
+        <div className='d-flex flex-row mb-3'>
+            <div className='col-1'></div>
+            <div className='col-1'></div>
+            <div className='col-1'><img className='underline mb-4 col-1' id='notesline' src={Line} alt={'Line'}/></div>
+        </div>
+        
+      <Row>
             <Col md={6}>
         <p className='note-point1'>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
@@ -33,7 +41,7 @@ const CandidateNotes = () => {
         <Row>
         <Col md={6}>
             <div className='text-notes'>
-            <textarea>Type here..</textarea>
+            <textarea style={{resize:'none'}}>Type here..</textarea>
             </div>
             <span className='hit-enter'><i class="fa-sharp fa-solid fa-circle-check" id="tick-mark"></i>
             <i class="fa-solid fa-circle-xmark" id="cross-mark"></i>
@@ -43,5 +51,3 @@ const CandidateNotes = () => {
     </div>
   )
 }
-
-export default CandidateNotes
