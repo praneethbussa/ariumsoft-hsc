@@ -1,20 +1,18 @@
 .box2{
-    width: 80%;
-    height: 70px;
     background-color: white;
     border-radius: 20px 0px 0px 20px;
     border: none;
     float: right;
-    margin-top: -70px;
+    margin-top: 25px;
+    padding: 5px;
 }
 
 .imglogo{
-    width: 135px;
-    height: 66px;
-    margin-left: 70px;
-    margin-top: 25px;
     background-color: #F1F1F1;
     border: transparent;
+    margin-top: 33px;
+    margin-left: 45px;
+    padding: 5px;
 }
 
 #userIcon{
@@ -29,27 +27,25 @@
 }
 
 .box1{
-    width: 83%;
-    height: 70px;
     background-color: white;
     border-radius: 20px 0px 0px 20px;
     border: none;
     float: right;
-    margin-top: -70px;
+    margin-top: 25px;
+    padding: 5px;
 }
 
 .imglogo{
-    width: 135px;
-    height: 66px;
-    margin-left: 70px;
-    margin-top: 25px;
     color: #F1F1F1;
     border: transparent;
+    margin-top: 33px;
+    margin-left: 45px;
+    padding: 5px;
 }
 .settings{
     float: right;
     margin-right: 60px;
-    margin-top: 27px;
+    margin-top: 18px;
     color: #021668;
     font-size: 17px;
 }
@@ -57,7 +53,7 @@
 .notify{
     float: right;
     margin-right: 60px;
-    margin-top: 27px;
+    margin-top: 18px;
     color: #021668;
     font-size: 18px;
 }
@@ -65,7 +61,8 @@
 .img-profile{
     float: right;
     margin-right: 60px;
-    margin-top: 17px;
+    margin-top: 10px;
+    margin-bottom: 10px;
     width: 36px;
 }
 

@@ -10,7 +10,7 @@ import './Navbar.css';
 
 export default function Navbar() {
   return (
-    <div className='col-md-2 align-items-start' style={{marginRight:"0px",paddingLeft:"0px"}}>
+    <div className='col-md-2 align-items-start' style={{marginRight:"0px", paddingLeft:"0px"}}>
       <div className="d-flex flex-column flex-nowrap bg-white sidenav px-4">
         <NavLink to="/" style={({ isActive }) => ({color: isActive ? '#F88022' : '#021668',fontSize:"16px",fontWeight:"500"})} className='dashboard my-2'>
           <img src={Dashboard} alt={'dashboard'} className="link"/>Dashboard

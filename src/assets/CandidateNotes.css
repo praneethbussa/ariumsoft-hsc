@@ -2,7 +2,7 @@
     background-color: white;
     border: transparent;
     border-radius: 15px 0px 0px 15px; 
-    padding: 25px;
+    padding: 25px !important;
 }
 
 .note-point1{
