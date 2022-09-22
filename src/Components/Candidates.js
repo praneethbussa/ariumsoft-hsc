@@ -27,7 +27,7 @@ const Candidates = () => {
             </span>
             </Col>
             </Row>
-            <Col md={6}>
+            <Col md={12} mx={3}>
             <div class="search-bar">
     <i class="fa fa-search"></i>
     <input type="text" className='form-control' placeholder="Search"></input>
