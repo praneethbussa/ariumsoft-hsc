@@ -64,7 +64,7 @@ const CandidateInfo = () => {
 
                 <div className='d-flex flex-row my-2'>
                     <form className="col-md-3 form-floating">
-                        <input type="text" className="form-control" id="floatingInputValue" placeholder="ZipCode"/>
+                        <input type="number" className="form-control" id="floatingInputValue" placeholder="ZipCode"/>
                          <label for="floatingInputValue">ZipCode</label>
                     </form>
                 </div>
@@ -115,6 +115,12 @@ const CandidateInfo = () => {
                         <textarea className="form-control" id="exampleFormControlTextarea1" rows="5" placeholder='Type here...'></textarea>
                     </div>                                    
                 </div>
+            </div>
+
+            <div className="col-md-6">
+            <button className='resume'>
+                <span className='resume-upload'>Upload Resume</span><img src={plusCircle} id="plus-icon"></img>
+            </button>
             </div>
 
             <div className='format-file'>

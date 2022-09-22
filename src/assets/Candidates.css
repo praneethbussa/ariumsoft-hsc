@@ -2,7 +2,7 @@
     background-color: white;
     border: transparent;
     border-radius: 15px 0px 0px 15px;
-    padding: 25px;
+    padding: 25px !important;
 }
 
 .candidate-text{
@@ -33,7 +33,7 @@ color: #001D65;
      height: 60px;
      text-indent: 25px;
      border: 1px solid #F1F1F1;
-     border-radius: 10px ;
+     border-radius: 20px ;
     }
     .search-bar .fa-search{
         position: absolute;
