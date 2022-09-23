@@ -1,6 +1,6 @@
 import React from "react";
 import { Col, Row } from "react-bootstrap";
-import { Link, Route, Routes } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "../assets/RecruiterDashboard.css";
 import GreenTick from "../Images/greentick.svg";
 import RedCross from "../Images/redcross.svg";

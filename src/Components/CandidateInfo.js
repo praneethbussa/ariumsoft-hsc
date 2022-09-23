@@ -1,7 +1,4 @@
 import React from "react";
-import { Row, Col } from "react-bootstrap";
-import { FloatingLabel } from "react-bootstrap";
-import { Form } from "react-bootstrap";
 import plusCircle from "../Images/plus-circle.svg";
 import "../assets/CandidateInfo.css";
 import { Link } from "react-router-dom";
@@ -119,7 +116,7 @@ const CandidateInfo = () => {
 
             <div className="col-md-6">
             <button className='resume'>
-                <span className='resume-upload'>Upload Resume</span><img src={plusCircle} id="plus-icon"></img>
+                <span className='resume-upload'>Upload Resume</span><img src={plusCircle} alt="..." id="plus-icon"></img>
             </button>
             </div>
 
