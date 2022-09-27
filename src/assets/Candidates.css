@@ -2,7 +2,7 @@
     background-color: white;
     border: transparent;
     border-radius: 15px 0px 0px 15px;
-    padding: 25px !important;
+    padding: 25px 40px 25px 25px !important;
 }
 
 .candidate-text{
@@ -13,34 +13,34 @@ color: #001D65;
 }
 
 .add-button{
-    padding: 12px;
+    padding: 15px;
     font-size: 16px;
     font-family: 'Outfit';
     font-weight: 600;
     background-color: #001D65;
     color: white;
     border-radius: 10px;
-    width: 90%;
+    width: 45%;
     border: transparent;
+    float: right;
 }
 
 .search-bar{
     position: relative;
     margin-top: 30px;
-    width: 94%;
-    }
-    .search-bar input{
-     height: 60px;
-     text-indent: 25px;
-     border: 1px solid #F1F1F1;
-     border-radius: 20px ;
-    }
-    .search-bar .fa-search{
-        position: absolute;
-        top: 23px;
-        left: 16px;
-        color: #CCCCCC;
-       }
+}
+.search-bar input{
+    height: 60px;
+    text-indent: 30px;
+    border: 1px solid #F1F1F1;
+    border-radius: 20px ;
+}
+.search-bar .fa-search{
+    position: absolute;
+    top: 23px;
+    left: 16px;
+    color: #CCCCCC;
+}
 
 .select-candidate label{
     border-radius: 10px;

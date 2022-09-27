@@ -106,20 +106,11 @@
     font-size: 16px;
     font-family: 'outfit';
     font-weight: 400;
-    border-color: #021668;
-    background-color: white;
-    color: #021668;
+    background-color: #021668;
+    color: white;
     border-radius: 10px;
     float: right;
     margin-top: 80px;
     padding: 10px;
     width: 40%;
-}
-.saving-button:hover{
-    background-color: #021668;
-    color: #fff;
-}
-.cancel-btn:hover{
-    background-color: #021668;
-    color: #fff;
 }

@@ -47,21 +47,6 @@
     text-decoration: underline;
 }
 
-/* .task1, .Job1, .Candidate1{
-    margin-top: 25px !important;
-    border: 1px solid #F1F1F1;
-    border-radius: 10px;
-    padding: 10px;
-}
-.task2, .Job2, .Candidate2,
-.task3, .Job3, .Candidate3,
-.task4, .Job4, .Candidate4,
-.task5, .Job5, .Candidate5{
-    margin-top: 10px !important;
-    border: 1px solid #F1F1F1;
-    border-radius: 10px;
-    padding: 10px;
-} */
 .task{
     border: 1px solid #F1F1F1;
     border-radius: 10px;
