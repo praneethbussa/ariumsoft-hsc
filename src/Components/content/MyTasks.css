@@ -21,7 +21,7 @@
     height: 60px;
     border: 1px solid #F1F1F1;
     border-radius: 20px;
-    width: 82%;    
+    width: 97.7%;    
 }
 ::placeholder {
     color: #CCCCCC !important;
@@ -86,9 +86,7 @@ img {
     font-weight: 500;
 }
 
-#save {
-    
-    width: 50%;
+#save-task {
     height: 60px;
     background-color: #021668;
     border-radius: 10px;
@@ -104,4 +102,12 @@ img {
     color: #0C0C0C;
     font-size: 16px;
     font-weight: 400;
+}
+
+#save {
+    width: 50%;
+    height: 60px;
+    background-color: #021668;
+    border-radius: 10px;
+    margin: 20px 0px 0px 6px;
 }

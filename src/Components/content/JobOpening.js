@@ -28,7 +28,7 @@ export default function JobOpening() {
                 </div>
                 <div className='container'>
                     <div className='row'>
-                        <div className='col-md-5'>
+                        <div className='col-md-6'>
                             <div className="p-4 jobs mt-4">
                                 <div id="job1" className='inner p-3 mb-2'>
                                     <div className='mb-2 d-flex flex-row justify-content-between'>
@@ -89,7 +89,7 @@ export default function JobOpening() {
                                 </div>
                             </div>
                         </div>
-                        <div className='col-md-5 mt-4'>
+                        <div className='col-md-6 mt-4'>
                             <div className='h-auto jobs mb-3 px-4 pt-2 py-5'>
                                 <div className='d-flex flex-row justify-content-between'>
                                     <div className='col-md-10 my-2 headings'>Harley Davidson-Job Requirement</div>

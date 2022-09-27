@@ -26,7 +26,7 @@ export default function MyTasks() {
                 </div>
                 <div className='container'>
                     <div className='row'>
-                        <div className='col-md-5'>
+                        <div className='col-md-6'>
                             <div style={{height:"96.5%"}} className="p-4 jobs mt-4">
                                 <div id="job1" className='inner p-3 mb-2'>
                                     <div className='jobtitle'>JO001-Harley Davidson-Job Requirement</div>
@@ -70,7 +70,7 @@ export default function MyTasks() {
                                 </div>
                             </div>
                         </div>
-                        <div className='col-md-5 mt-4'>
+                        <div className='col-md-6 mt-4'>
                             <div className='h-100 jobs mb-5 px-4 pt-2 py-5'>
                                 <div className='d-flex flex-row justify-content-between'>
                                     <div className='col-md-11 my-2 headings'>Harley Davidson-Job Requirement</div>
@@ -92,7 +92,7 @@ export default function MyTasks() {
                                     <div className='my-2 subheadings'>Positions to be filled</div>
                                     <div className=' details'>12</div>
                                 </div>
-                                <Link to={"/createjobopening"} className="mt-4 btn btn-primary col-lg-5 d-flex align-items-center justify-content-center" id="save">Create Job Opening</Link>
+                                <Link to={"/createjobopening"} className="mt-4 btn btn-primary col-lg-5 d-flex align-items-center justify-content-center" id="save-task">Create Job Opening</Link>
                             </div>
                         </div>
                     </div>
