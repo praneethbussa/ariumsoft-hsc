@@ -1,11 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import "./App.css";
 import { Route, Routes } from "react-router-dom";
 import Home from "./Components/Home";
 import Settings from "./Components/Settings";
 import MyProfile from "./Components/MyProfile";
 import ChangePassword from "./Components/ChangePassword";
-import CandidateStatus from "./Components/CandidateStatus";
 import Header from "./Components/Header";
 import Navbar from "./Components/Navbar";
 import CandidateInfo from "./Components/CandidateInfo";
@@ -16,7 +15,6 @@ import ChangeStatus from "./Components/content/ChangeStatus";
 import SaveJob from "./Components/content/SaveJob";
 import JobOpening from "./Components/content/JobOpening";
 import CreateJobOpening from "./Components/content/CreateJobOpening";
-import RecruiterDashboard from "./Components/RecruiterDashboard";
 
 
 const App = () => {
@@ -42,8 +40,10 @@ const App = () => {
         <Route path='/savejob' element={<SaveJob/>}></Route>
         <Route path='/searchjobopening' element={<JobOpening/>}></Route>
         <Route path='/changestatus' element={<ChangeStatus />}></Route>
-
-
+        <Route path='/candidatedetails/:id' element={<ChangeStatus />} />
+        <Route path='/candidates/editcandidatedetails' element={<CandidateInfo />} />
+        <Route path="/mytasks/:id" element={<MyTasks/>} />
+        <Route path="/searchjobopening/:id" element={<JobOpening/>} />
       </Routes>
       </div>
       </div>

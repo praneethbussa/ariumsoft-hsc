@@ -107,10 +107,11 @@
     font-family: 'outfit';
     font-weight: 400;
     background-color: #021668;
+    border: transparent;
     color: white;
     border-radius: 10px;
     float: right;
     margin-top: 80px;
-    padding: 10px;
+    padding: 12px;
     width: 40%;
 }
