@@ -1,9 +1,8 @@
 import React from "react";
 import { useState } from "react";
-import { Row, Col, FormControl } from "react-bootstrap";
+import { Row, Col } from "react-bootstrap";
 import "../assets/ChangePassword.css";
 import { FloatingLabel } from "react-bootstrap";
-import { Form } from "react-bootstrap";
 
 const ShowHideLabel = ({name, label, placeholder}) => {
     const [isVisible, setVisible] = useState(false);

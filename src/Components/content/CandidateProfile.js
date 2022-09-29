@@ -1,9 +1,19 @@
-import React from 'react'
+import React,{useEffect, useState} from 'react'
 
 import Line from '../../Images/Line.svg';
 import File from '../../Images/File.svg';
+import { getCandidateInfo } from '../helpers/api/candidate';
 
-export default function CandidateProfile() {
+
+export default function CandidateProfile({candidateDetails}) {
+    const [candidates, setCandidates] = useState([]);
+
+  useEffect(() => {
+    (async () => {
+      setCandidates(await getCandidateInfo());
+    })();
+  }, []);
+  console.log(candidateDetails?.results?.City, "cc profile")
   return (
     <div>
         <div className='d-flex flex-row'>
@@ -13,11 +23,11 @@ export default function CandidateProfile() {
         </div>
         
         <div className='heading'>Contact Details</div>    
-                <div className='contact col-3 p-2'>mjacob@gmail.com</div>
-                <div className='contact col-3 p-2 my-2'>+11234-567-890</div>
+                <div className='contact col-3 p-2'>{candidateDetails?.results?.Email}</div>
+                <div className='contact col-3 p-2 my-2'>{candidateDetails?.results?.Mobile}</div>
                 <div className='heading'>Education & Experience</div>
-                <div>Post Graduate</div>
-                <div>5.2 years</div>
+                <div>{candidateDetails?.results?.Qualification}</div>
+                <div>{candidateDetails?.results?.Experience}</div>
                 <div className='heading'>Skills</div>
                 <div className='my-2 d-flex flex-row'>
                     <div className='skills rounded-pill px-2 d-flex align-items-center'style={{marginRight:"4px"}}>Adobe Suite</div>
@@ -27,13 +37,13 @@ export default function CandidateProfile() {
                     <div className='skills mx-1 rounded-pill px-2 d-flex align-items-center'>Design Strategy</div>
                 </div>
                 <div className='heading'>Job Type Prefered</div>
-                <div>Permanent Role</div>
+                <div>{candidateDetails?.results?.Jobtype}</div>
                 <div className='heading'>Address</div>
-                <div>Paradise Apartments</div>
-                <div>Road Number 1</div>
-                <div>Street 23</div>
-                <div>New Jersey</div>
-                <div>USA - 12345</div>  
+                <div>{candidateDetails?.results?.AddressLine1}</div>
+                <div>{candidateDetails?.results?.AddressLine2}</div>
+                <div>{candidateDetails?.results?.City}</div>
+                <div>{candidateDetails?.results?.State}</div>
+                <div>{candidateDetails?.results?.Country} - {candidateDetails?.results?.Zipcode}</div>  
                 <div className='heading'>Recruiter</div>
                 <div>Williams</div>
                 <div className='heading'>Attachments</div>

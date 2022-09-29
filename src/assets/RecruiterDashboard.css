@@ -62,7 +62,7 @@
 .Candidate{
     border: 1px solid #F1F1F1;
     border-radius: 10px;
-    padding: 12px;
+    padding: 14px;
     margin-top: 10px !important;  
 }
 
@@ -142,11 +142,11 @@
     font-size: 16px;
     font-family: 'Outfit';
     font-weight: 600;
-    margin-top: -7px;
+    margin-top: -12px;
 }
 
 #candidate-icon{
-    font-size: 53px;
+    font-size: 50px;
     color: #3AB8DA;
     background-color: white;
 }

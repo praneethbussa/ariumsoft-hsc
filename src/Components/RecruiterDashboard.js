@@ -1,262 +1,129 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Col, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "../assets/RecruiterDashboard.css";
 import GreenTick from "../Images/greentick.svg";
 import RedCross from "../Images/redcross.svg";
-// import CandidateStatus from "./CandidateStatus";
-
-// const CommonRouteHelper = ({ routes, defaultRoute, redirectTo }) => {
-//   return (
-//     <Routes>
-//       {routes.map((url, Component, key) => {
-//         <Route key={key} path={url} element={Component} />;
-//       })}
-//     </Routes>
-//   );
-// };
-
-// const WrapComponent = Component => ({...props}) => {
-//   return (
-//     <>
-//     <Component {...props} />
-//     </>
-//   );
-// }
-// const recruitTabs = [
-//   {
-//     url:"/candidateStatus",
-//     key:"1",
-//     Component: WrapComponent(CandidateStatus)
-//   }
-// ]
+import { getAllTasks } from "./helpers/api/tasks";
+import { getAllJobOpenings } from "./helpers/api/jobs";
+import { getAllCandidates } from "./helpers/api/candidate";
 
 const RecruitDashboard = () => {
+  const [tasks, setTasks] = useState([]);
+  const [jobs, setJobs] = useState([]);
+  const [candidate, setCandidate] =useState([]);
+  useEffect(() => {
+    (async () => {
+      setTasks(await getAllTasks()); 
+      setJobs(await getAllJobOpenings()); 
+      setCandidate(await getAllCandidates());    
+    })();
+  }, []);
+
   return (
     <>
-      {/* <CommonRouteHelper routes={recruitTabs}/> */}
-  <div className="col-md-10 recruiter-page">
+      <div className="col-md-10 recruiter-page">
         <p className="recruiter-name">Hello John Williams!</p>
-    <Row>
-      <Col md={4}>
-        <div className="tasks">
-          <div className="numof_tasks">11</div>
-          <div className="open_tasks">My Tasks</div>
-        </div>
-      <Link to="/mytasks">
-        <div className="click-more">More...</div>
-      </Link>
-      </Col>
-      <Col md={4}>
-        <div className="tasks">
-          <div className="numof_tasks">14</div>
-          <div className="open_tasks">My Job Openings</div>
-        </div>
-        <Link to="/jobOpenings">
-        <div className="click-more">More...</div>
-        </Link>
-      </Col>
-      <Col md={4}>
-        <div className="tasks">
-          <div className="numof_tasks">12</div>
-          <div className="open_tasks">Candidates</div>
-        </div>
-        <Link to="/candidates">
-        <div className="click-more">More...</div>
-        </Link>
-      </Col>
-    </Row>
+        <Row>
+          <Col md={4}>
+            <div className="tasks">
+              <div className="numof_tasks">{tasks.results}</div>
+              <div className="open_tasks">My Tasks</div>
+            </div>
+            <Link to="/mytasks">
+              <div className="click-more">More...</div>
+            </Link>
+          </Col>
+          <Col md={4}>
+            <div className="tasks">
+              <div className="numof_tasks">{jobs.results}</div>
+              <div className="open_tasks">All Job Openings</div>
+            </div>
+            <Link to="/jobOpenings">
+              <div className="click-more">More...</div>
+            </Link>
+          </Col>
+          <Col md={4}>
+            <div className="tasks">
+              <div className="numof_tasks">{candidate.results}</div>
+              <div className="open_tasks">My Candidates</div>
+            </div>
+            <Link to="/candidates">
+              <div className="click-more">More...</div>
+            </Link>
+          </Col>
+        </Row>
 
-    <Row>
-      <Col md={12}>
-    <Row style={{marginTop:15}}>
-      <Col md={4}>
-    
-  <div className="task">
-    <div className="jobid">JO001 - Job Requirement for Tesla</div>
-      <div className='d-flex flex-row'>
-        <div className='col-md-1 client'><i className="fa-solid fa-circle-user" id="user-icon" /></div>
-        <div className="col assignee-name">Emily</div>
-        <div className='date mx-2 col-md-auto'>10-08-2022</div>
-        <div className='time col-md-2'>02:05pm</div>
+        <Row>
+          <Col md={12}>
+            <Row style={{ marginTop: 15 }}>
+              <Col md={4}>
+                {tasks?.data?.Tasks?.length && tasks?.data?.Tasks?.map((eachTask) => 
+                  <Link to={`/mytasks/${eachTask._id}`} style={{textDecoration:'none', color:'#A2A2A2'}}>
+                  <div className="task">
+                    <div className="jobid">
+                      {eachTask.title}
+                    </div>
+                    <div className="d-flex flex-row">
+                      <div className="col-md-1 client">
+                        <i className="fa-solid fa-circle-user" id="user-icon" />
+                      </div>
+                      <div className="col assignee-name">{eachTask.recruiter}</div>
+                      <div className="date mx-2 col-md-auto">{eachTask.date}</div>
+                      <div className="time col-md-2">02:05pm</div>
+                    </div>
+                  </div>
+                  </Link>
+                )}                
+              </Col>
+
+              <Col md={4}>
+                {jobs?.data?.Jobopenings?.length && jobs?.data?.Jobopenings?.map((eachJob) =>
+                  <Link to={`/searchjobopening/${eachJob._id}`} style={{textDecoration:'none', color:'#A2A2A2'}}>
+                 <div className="Job">
+                 <div className="jobid">{eachJob.JobId} - {eachJob.JobTitle}</div>
+                 <div className="d-flex flex-row">
+                   <div className="col-md-1 client">
+                     <i className="fa-solid fa-circle-user" id="user-icon" />
+                   </div>
+                   <div className="col assignee-name">Emily</div>
+                   <div className="date mx-2 col-md-auto">10-08-2022</div>
+                   <div className="time col-md-2">02:05pm</div>
+                 </div>
+               </div>
+               </Link>
+                )}
+              </Col>
+
+              <Col md={4}>
+                {candidate?.data?.candidates?.length && candidate?.data?.candidates?.map((eachCandidate) =>
+                <Link to={`/candidatedetails/${eachCandidate._id}`} style={{textDecoration:'none'}}>
+                <div className="Candidate">
+                  <Row>
+                    <Col md={2}>
+                      <span className="icon1">
+                        <i
+                          className="fa-solid fa-circle-user"
+                          id="candidate-icon"
+                        ></i>
+                        <img src={GreenTick} className="tick-img" alt="..."/>
+                      </span>
+                    </Col>
+                    <Col md={10}>
+                      <div className="candid-status">{eachCandidate.Status}</div>
+                      <div className="candidateId1">{eachCandidate.CandidateId}-{eachCandidate.Name}</div>
+                      <div className="candidate-role">{eachCandidate.Role}</div>
+                    </Col>
+                  </Row>
+                </div>
+                </Link>
+                )}
+
+              </Col>
+            </Row>
+          </Col>
+        </Row>
       </div>
-  </div>
-   
-  <div className="task">
-    <div className="jobid">JO001 - Job Requirement for Tesla</div>
-      <div className='d-flex flex-row'>
-        <div className='col-md-1 client'><i className="fa-solid fa-circle-user" id="user-icon" /></div>
-        <div className="col assignee-name">Emily</div>
-        <div className='date mx-2 col-md-auto'>10-08-2022</div>
-        <div className='time col-md-2'>02:05pm</div>
-      </div>
-  </div>
-  
-  
-  <div className="task">
-    <div className="jobid">JO001 - Job Requirement for Tesla</div>
-      <div className='d-flex flex-row'>
-        <div className='col-md-1 client'><i className="fa-solid fa-circle-user" id="user-icon" /></div>
-        <div className="col assignee-name">Emily</div>
-        <div className='date mx-2 col-md-auto'>10-08-2022</div>
-        <div className='time col-md-2'>02:05pm</div>
-      </div>                
-  </div>
-    
-    
-  <div className="task">
-    <div className="jobid">JO001 - Job Requirement for Tesla</div>
-      <div className='d-flex flex-row'>
-        <div className='col-md-1 client'><i className="fa-solid fa-circle-user" id="user-icon" /></div>
-        <div className="col assignee-name">Emily</div>
-        <div className='date mx-2 col-md-auto'>10-08-2022</div>
-        <div className='time col-md-2'>02:05pm</div>
-      </div>                
-  </div>
-    
-  <div className="task">
-    <div className="jobid">JO001 - Job Requirement for Tesla</div>
-      <div className='d-flex flex-row'>
-        <div className='col-md-1 client'><i className="fa-solid fa-circle-user" id="user-icon" /></div>
-        <div className="col assignee-name">Emily</div>
-        <div className='date mx-2 col-md-auto'>10-08-2022</div>
-        <div className='time col-md-2'>02:05pm</div>
-      </div>                
-  </div>
-      </Col>
-
-    
-      <Col md={4}>
-   
-  <div className="Job">
-    <div className="jobid">JO001 - Job Requirement for Tesla</div>
-      <div className='d-flex flex-row'>
-        <div className='col-md-1 client'><i className="fa-solid fa-circle-user" id="user-icon" /></div>
-        <div className="col assignee-name">Emily</div>
-        <div className='date mx-2 col-md-auto'>10-08-2022</div>
-        <div className='time col-md-2'>02:05pm</div>
-      </div>
-  </div>
-   
-    
-  <div className="Job">
-    <div className="jobid">JO001 - Job Requirement for Tesla</div>
-      <div className='d-flex flex-row'>
-        <div className='col-md-1 client'><i className="fa-solid fa-circle-user" id="user-icon" /></div>
-        <div className="col assignee-name">Emily</div>
-        <div className='date mx-2 col-md-auto'>10-08-2022</div>
-        <div className='time col-md-2'>02:05pm</div>
-      </div>
-  </div>
-    
-  <div className="Job">
-    <div className="jobid">JO001 - Job Requirement for Tesla</div>
-      <div className='d-flex flex-row'>
-        <div className='col-md-1 client'><i className="fa-solid fa-circle-user" id="user-icon" /></div>
-        <div className="col assignee-name">Emily</div>
-        <div className='date mx-2 col-md-auto'>10-08-2022</div>
-        <div className='time col-md-2'>02:05pm</div>
-      </div>
-  </div>
-   
-  <div className="Job">
-    <div className="jobid">JO001 - Job Requirement for Tesla</div>
-      <div className='d-flex flex-row'>
-        <div className='col-md-1 client'><i className="fa-solid fa-circle-user" id="user-icon" /></div>
-        <div className="col assignee-name">Emily</div>
-        <div className='date mx-2 col-md-auto'>10-08-2022</div>
-        <div className='time col-md-2'>02:05pm</div>
-      </div>
-  </div>
-   
-  <div className="Job">
-    <div className="jobid">JO001 - Job Requirement for Tesla</div>
-      <div className='d-flex flex-row'>
-        <div className='col-md-1 client'><i className="fa-solid fa-circle-user" id="user-icon" /></div>
-        <div className="col assignee-name">Emily</div>
-        <div className='date mx-2 col-md-auto'>10-08-2022</div>
-        <div className='time col-md-2'>02:05pm</div>
-      </div>
-  </div>
-      </Col>
-
-
-      <Col md={4}>
-  <div className="Candidate">
-    <Row>
-      <Col md={3}>
-          <span className="icon1"><i className="fa-solid fa-circle-user" id="candidate-icon"></i>
-          <img src={GreenTick} className="tick-img" alt="..." /></span>
-      </Col>
-      <Col md={9}>
-          <div className="candid-status">Interview Scheduled</div>
-          <div className="candidateId1">C001 - Robert Stuart</div>
-          <div className="candidate-role">Scrum master</div>
-      </Col>
-    </Row>
-  </div>
-
-
-  <div className="Candidate">
-    <Row>
-      <Col md={3}>
-          <span className="icon1"><i className="fa-solid fa-circle-user" id="candidate-icon"></i>
-          <img src={GreenTick} className="tick-img" alt="..." /></span>
-      </Col>
-      <Col md={9}>
-          <div className="candid-status">Interview Scheduled</div>
-          <div className="candidateId1">C002 - Venugopala Mutth..</div>
-          <div className="candidate-role">UI/UX designer</div>
-      </Col>
-    </Row>
-  </div>
-
-  <div className="Candidate">
-    <Row>
-      <Col md={3}>
-          <span className="icon1"><i className="fa-solid fa-circle-user" id="candidate-icon"></i>
-          <img src={GreenTick} className="tick-img" alt="..." /></span>
-      </Col>
-      <Col md={9}>
-          <div className="candid-status">In Process</div>
-          <div className="candidateId1">C003 - James Addison</div>
-          <div className="candidate-role">Scrum master</div>
-      </Col>
-    </Row>
-  </div>
-
-  <div className="Candidate">
-    <Row>
-      <Col md={3}>
-          <span className="icon1"><i className="fa-solid fa-circle-user" id="candidate-icon"></i>
-          <img src={GreenTick} className="tick-img" alt="..." /></span>
-      </Col>
-      <Col md={9}>
-          <div className="candid-status">Available</div>
-          <div className="candidateId1">C004 - Adarsh Singh</div>
-          <div className="candidate-role">Android developer</div>
-      </Col>
-    </Row>
-  </div>
-
-  <div className="Candidate">
-    <Row>
-      <Col md={3}>
-          <span className="icon1"><i className="fa-solid fa-circle-user" id="candidate-icon"></i>
-          <img src={RedCross} className="tick-img" alt="..." /></span>
-      </Col>
-      <Col md={9}>
-          <div className="candid-status">Rejected</div>
-          <div className="candidateId1">C005 - Steve Williams</div>
-          <div className="candidate-role">IOS developer</div>
-      </Col>
-    </Row>
-  </div>
-      </Col>
-    </Row>
-      </Col>
-    </Row>
-  </div>
     </>
   );
 };
