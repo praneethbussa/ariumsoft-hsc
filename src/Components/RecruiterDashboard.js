@@ -106,7 +106,7 @@ const RecruitDashboard = () => {
                           className="fa-solid fa-circle-user"
                           id="candidate-icon"
                         ></i>
-                        <img src={GreenTick} className="tick-img" alt="..."/>
+                        <img src={eachCandidate?.Availability == "active" ? GreenTick : RedCross} className="tick-img" alt="..."/>
                       </span>
                     </Col>
                     <Col md={10}>

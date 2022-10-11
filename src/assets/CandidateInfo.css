@@ -115,3 +115,7 @@
     padding: 12px;
     width: 40%;
 }
+
+.mandatory{
+    color: red;
+}

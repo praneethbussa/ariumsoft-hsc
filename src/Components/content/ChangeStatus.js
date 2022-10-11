@@ -10,7 +10,7 @@ import CandidateProfile from "./CandidateProfile";
 import CandidateStatus from "../CandidateStatus";
 import CandidateNotes from "../CandidateNotes";
 import "./ChangeStatus.css";
-import { getCandidateInfo } from "../helpers/api/candidate";
+import { getCandidateInfo, updateCandidate } from "../helpers/api/candidate";
 
 export default function ChangeStatus() {
   const [show, setShow] = useState(true);
@@ -64,6 +64,18 @@ export default function ChangeStatus() {
     })();
   }, []);
 
+  // const userToUpdate = {
+  //   Name: "Jacob",
+  //   Role: "Frontend"
+  // };
+
+//   const handleClick = async () => {
+//   const editCandidate = await updateCandidate(id, userToUpdate);
+//   if (editCandidate.data) {
+//     console.log(editCandidate.data);
+//   }
+// };
+
   
   return (
     <div className="col-sm-10">
@@ -79,9 +91,9 @@ export default function ChangeStatus() {
               />
             </div>
             <div id="title" className="mx-2">
-              Melvin Jacob
+            {candidateDetails?.results?.Name}
             </div>
-            <Link to="/candidates/editcandidatedetails">
+            <Link to={`/candidates/editcandidatedetails/${id}`}>
               <img className="edit" src={Edit} alt={"User"} />
             </Link>
           </div>
@@ -116,8 +128,8 @@ export default function ChangeStatus() {
             </button>
           )}
         </div>
-        <div id="role">Interaction Designer</div>
-        <div className="my-2 status">Available</div>
+        <div id="role">{candidateDetails?.results?.Role}</div>
+        <div className="my-2 status">{candidateDetails?.results?.Status}</div>
         {isShown && <SaveJob />}
         <div className="mt-3 d-flex flex-row">
           <div
