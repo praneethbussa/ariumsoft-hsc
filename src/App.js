@@ -27,6 +27,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home isLogin={true} />} />
         <Route path="/mytasks" element={<MyTasks/>} />
+        <Route path="/jobOpenings" element={<JobOpening />} />
         <Route path="/createjobopening" element={<CreateJobOpening />} />
         <Route path="/jobOpenings" element={<CreateJobOpening/>} />
         <Route path="/settings" element={ <Settings /> } />
@@ -41,7 +42,7 @@ const App = () => {
         <Route path='/searchjobopening' element={<JobOpening/>}></Route>
         <Route path='/changestatus' element={<ChangeStatus />}></Route>
         <Route path='/candidatedetails/:id' element={<ChangeStatus />} />
-        <Route path='/candidates/editcandidatedetails' element={<CandidateInfo />} />
+        <Route path='/candidates/editcandidatedetails/:id' element={<CandidateInfo />} />
         <Route path="/mytasks/:id" element={<MyTasks/>} />
         <Route path="/searchjobopening/:id" element={<JobOpening/>} />
       </Routes>

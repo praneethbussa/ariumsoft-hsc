@@ -1,23 +1,57 @@
 import React, { useState, useEffect } from "react";
-import { Row, Col } from "react-bootstrap";
-import { Form } from "react-bootstrap";
-import { FloatingLabel } from "react-bootstrap";
+import { Row, Col, Form, FloatingLabel } from "react-bootstrap";
 import "../assets/Candidates.css";
 import GreenTick from "../Images/greentick.svg";
 import RedCross from "../Images/redcross.svg";
 import CandidateInfo from "./CandidateInfo";
-import { Route, Routes } from "react-router-dom";
-import { Link } from "react-router-dom";
+import { Route, Routes, Link } from "react-router-dom";
 import { getAllCandidates } from "./helpers/api/candidate";
 
 const Candidates = () => {
   const [candidates, setCandidates] = useState([]);
+  const [searchResults, setSearchResults] = useState([]);
+  const [searchParams, setSearchParams] = useState({Name:'', Role: '', Availability: ''});
 
-  useEffect(() => {
+  useEffect(() => {    
     (async () => {
-      setCandidates(await getAllCandidates());
+      const res = await getAllCandidates();
+      setCandidates(res?.data?.candidates);
+      setSearchResults(res?.data?.candidates)
     })();
   }, []);
+
+  const setFilterParams = (field, value) => {
+    if(field == "Name"){
+      searchParams.Name = value;
+      searchParams.Role = value;
+    }else{
+      searchParams[field] = value;
+    }
+    console.log(searchParams)
+    setSearchParams(searchParams);
+    filterCandidates();
+  }
+  const filterCandidates = () => { 
+    const results = candidates?.filter(function(item) {
+      if(searchParams.Name == "" && searchParams.Availability == ""){
+        return true;
+      } else if (searchParams.Name != "" || searchParams.Availability != "") {
+        if(item.Name.toLowerCase().includes(searchParams.Name) || 
+        item.Role.toLowerCase().includes(searchParams.Role) || 
+        item.CandidateId.toLowerCase().includes(searchParams.Name)){
+          if(searchParams.Availability == ""){
+            return true;
+          } else if(searchParams.Availability != "" && item.Availability.toLowerCase() == searchParams.Availability){
+            return true;
+          } else {
+            return false;
+          }
+        }
+      }
+      return false;
+    });
+    setSearchResults(results);  
+  }
 
   return (
     <div className="col-md-10 candidate-screen">
@@ -53,6 +87,7 @@ const Candidates = () => {
             type="text"
             className="form-control"
             placeholder="Search"
+            onChange={e => setFilterParams("Name", e.target.value.toLowerCase())}
           ></input>
         </div>
       </Col>
@@ -61,7 +96,7 @@ const Candidates = () => {
           <div className="select-candidate">
             <FloatingLabel id="floatingSelectGrid" label="Candidate Type">
               <Form.Select>
-                <option value="all">All</option>
+                <option value="">All</option>
                 <option value="my-candidates">My Candidates</option>
               </Form.Select>
             </FloatingLabel>
@@ -70,10 +105,10 @@ const Candidates = () => {
         <Col md={2}>
           <div className="select-candidate">
             <FloatingLabel controlId="floatingSelectGrid" label="Availability">
-              <Form.Select>
-                <option value="all">All</option>
+              <Form.Select  onChange={e => setFilterParams("Availability", e.target.value.toLowerCase())}>
+                <option value="">All</option>
                 <option value="active">Active</option>
-                <option value="in-active">InActive</option>
+                <option value="Inactive">InActive</option>
               </Form.Select>
             </FloatingLabel>
           </div>
@@ -84,7 +119,7 @@ const Candidates = () => {
       <div className="candidate-block1">
         <Row>
           
-          {candidates?.data?.candidates?.length && candidates?.data?.candidates?.map((eachCandidate) => 
+          {searchResults?.map((eachCandidate) => 
           <Col md={4}>
             <Link to={`/candidatedetails/${eachCandidate._id}`} style={{ textDecoration: "none" }}>
               <div className="Candidate">
@@ -95,7 +130,7 @@ const Candidates = () => {
                         className="fa-solid fa-circle-user"
                         id="candidate-icon"
                       ></i>
-                      <img src={GreenTick} className="tick-img" alt="..." />
+                      <img src={eachCandidate?.Availability == "active" ? GreenTick : RedCross} className="tick-img" alt="..." />
                     </span>
                   </Col>
                   <Col md={9}>
@@ -113,7 +148,7 @@ const Candidates = () => {
                     <Col>
                       <span className="recruit">Williams</span>
                       <span className="exclusive">Exclusive</span>
-                      <span className="until-date">Until 5/09/2022</span>
+                      <span className="until-date">{eachCandidate.StartdateofExclusivity}</span>
                     </Col>
                   </Row>
                 </Row>
