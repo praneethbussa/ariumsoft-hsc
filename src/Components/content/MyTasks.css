@@ -36,7 +36,6 @@
 
 .inner {
     width: 93%;
-    height: 13%;
     border: 1px solid #F1F1F1;
     border-radius: 10px;
 }
@@ -94,8 +93,11 @@ img {
 }
 
 #job1 {
-    border: 1px solid #021668;
+    border: 1px solid #F1F1F1;
     border-radius: 10px;
+}
+#job1:hover {
+    border: 1px solid #021668;
 }
 
 .details{
@@ -110,4 +112,15 @@ img {
     background-color: #021668;
     border-radius: 10px;
     margin: 20px 0px 0px 6px;
+}
+
+.activeTask{
+    border: 1px solid #021668 !important;
+}
+
+.job-details{
+    border: 1px solid #F1F1F1;
+    border-radius: 10px;
+    width: 80%;
+    height: 225px;
 }

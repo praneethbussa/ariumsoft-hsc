@@ -15,7 +15,7 @@ import ChangeStatus from "./Components/content/ChangeStatus";
 import SaveJob from "./Components/content/SaveJob";
 import JobOpening from "./Components/content/JobOpening";
 import CreateJobOpening from "./Components/content/CreateJobOpening";
-
+import { Toaster } from 'react-hot-toast';
 
 const App = () => {
   return (
@@ -45,10 +45,11 @@ const App = () => {
         <Route path='/candidates/editcandidatedetails/:id' element={<CandidateInfo />} />
         <Route path="/mytasks/:id" element={<MyTasks/>} />
         <Route path="/searchjobopening/:id" element={<JobOpening/>} />
+        <Route path="/editjobopening/:id" element={<CreateJobOpening />} />
       </Routes>
       </div>
       </div>
-      
+      <Toaster />
     </>
   );
 };

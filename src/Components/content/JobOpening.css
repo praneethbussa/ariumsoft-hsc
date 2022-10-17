@@ -83,3 +83,14 @@
     height: 60px;
     width: 60px;
 }
+
+.activeJob{
+    border: 1px solid #021668 !important;
+}
+
+.job-details{
+    border: 1px solid #F1F1F1;
+    border-radius: 10px;
+    height: 225px;
+    width: 80%;
+}

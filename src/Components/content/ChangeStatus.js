@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link, useParams, useSearchParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 import Person from "../../Images/Person.svg";
 import Tick from "../../Images/Tick.svg";
@@ -10,7 +10,7 @@ import CandidateProfile from "./CandidateProfile";
 import CandidateStatus from "../CandidateStatus";
 import CandidateNotes from "../CandidateNotes";
 import "./ChangeStatus.css";
-import { getCandidateInfo, updateCandidate } from "../helpers/api/candidate";
+import { getCandidateInfo } from "../helpers/api/candidate";
 
 export default function ChangeStatus() {
   const [show, setShow] = useState(true);
@@ -63,19 +63,6 @@ export default function ChangeStatus() {
       setCandidateDetails(await getCandidateInfo(id));    
     })();
   }, []);
-
-  // const userToUpdate = {
-  //   Name: "Jacob",
-  //   Role: "Frontend"
-  // };
-
-//   const handleClick = async () => {
-//   const editCandidate = await updateCandidate(id, userToUpdate);
-//   if (editCandidate.data) {
-//     console.log(editCandidate.data);
-//   }
-// };
-
   
   return (
     <div className="col-sm-10">
@@ -130,7 +117,7 @@ export default function ChangeStatus() {
         </div>
         <div id="role">{candidateDetails?.results?.Role}</div>
         <div className="my-2 status">{candidateDetails?.results?.Status}</div>
-        {isShown && <SaveJob />}
+        {isShown && <SaveJob candidateDetails={candidateDetails?.results}/>}
         <div className="mt-3 d-flex flex-row">
           <div
             onClick={profileClick}
