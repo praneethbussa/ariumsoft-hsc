@@ -7,11 +7,39 @@ import RedCross from "../Images/redcross.svg";
 import { getAllTasks } from "./helpers/api/tasks";
 import { getAllJobOpenings } from "./helpers/api/jobs";
 import { getAllCandidates } from "./helpers/api/candidate";
+import dot from "../Images/Ellipse.svg";
 
 const RecruitDashboard = () => {
-  const [tasks, setTasks] = useState([]);
+  const readStyle={
+    fontSize : "16px",
+    fontWeight : "500"
+  };
+  const unReadStyle={
+    fontSize : "16px",
+    fontWeight : "bold"
+  };
+  const recruiterStyle={
+    fontSize : "14px",
+    fontWeight : "600"
+  };
+  const RecruiterStyle={
+    fontSize : "14px",
+    fontWeight : "bold"
+  };
+  const dateStyle={
+    fontSize : "12px",
+    fontWeight : "400"
+  };
+  const DateStyle={
+    fontSize : "12px",
+    fontWeight : "400",
+    color: "#3AB8DA"
+  };
+
+  const [tasks, setTasks] = useState({});
   const [jobs, setJobs] = useState([]);
   const [candidate, setCandidate] =useState([]);
+
   useEffect(() => {
     (async () => {
       setTasks(await getAllTasks()); 
@@ -59,18 +87,19 @@ const RecruitDashboard = () => {
             <Row style={{ marginTop: 15 }}>
               <Col md={4}>
                 {tasks?.data?.Tasks?.length && tasks?.data?.Tasks?.map((eachTask) => 
-                  <Link to={`/mytasks/${eachTask._id}`} style={{textDecoration:'none', color:'#A2A2A2'}}>
+                  <Link to={`/mytasks/${eachTask?._id}`} style={{textDecoration:'none', color:'#A2A2A2'}}>
                   <div className="task">
-                    <div className="jobid">
-                      {eachTask.title}
+                    <img src={eachTask?.readstatus == "unread" ? dot : null} style={{float: "right"}} />
+                    <div className="jobid" style={eachTask?.readstatus == "unread" ? unReadStyle : readStyle}>
+                      {eachTask?.title}
                     </div>
                     <div className="d-flex flex-row">
                       <div className="col-md-1 client">
                         <i className="fa-solid fa-circle-user" id="user-icon" />
                       </div>
-                      <div className="col assignee-name">{eachTask.recruiter}</div>
-                      <div className="date mx-2 col-md-auto">{eachTask.date}</div>
-                      <div className="time col-md-2">02:05pm</div>
+                      <div className="col assignee-name" style={eachTask?.readstatus == "unread" ? RecruiterStyle : recruiterStyle}>Emily</div>
+                      <div className="date mx-2 col-md-auto" style={eachTask?.readstatus == "unread" ? DateStyle : dateStyle}>{eachTask?.createddate}</div>
+                      <div className="time col-md-2" style={eachTask?.readstatus == "unread" ? DateStyle : dateStyle}>{eachTask?.createdtime}</div>
                     </div>
                   </div>
                   </Link>
@@ -81,7 +110,7 @@ const RecruitDashboard = () => {
                 {jobs?.data?.Jobopenings?.length && jobs?.data?.Jobopenings?.map((eachJob) =>
                   <Link to={`/searchjobopening/${eachJob._id}`} style={{textDecoration:'none', color:'#A2A2A2'}}>
                  <div className="Job">
-                 <div className="jobid">{eachJob.JobId} - {eachJob.JobTitle}</div>
+                 <div className="jobid">JO00{eachJob.JobID} - {eachJob?.ClientName} - {eachJob.JobTitle}</div>
                  <div className="d-flex flex-row">
                    <div className="col-md-1 client">
                      <i className="fa-solid fa-circle-user" id="user-icon" />
@@ -111,7 +140,7 @@ const RecruitDashboard = () => {
                     </Col>
                     <Col md={10}>
                       <div className="candid-status">{eachCandidate.Status}</div>
-                      <div className="candidateId1">{eachCandidate.CandidateId}-{eachCandidate.Name}</div>
+                      <div className="candidateId1">C00{eachCandidate.CandidateId}-{eachCandidate.Name}</div>
                       <div className="candidate-role">{eachCandidate.Role}</div>
                     </Col>
                   </Row>

@@ -36,9 +36,10 @@ const Candidates = () => {
       if(searchParams.Name == "" && searchParams.Availability == ""){
         return true;
       } else if (searchParams.Name != "" || searchParams.Availability != "") {
-        if(item.Name.toLowerCase().includes(searchParams.Name) || 
-        item.Role.toLowerCase().includes(searchParams.Role) || 
-        item.CandidateId.toLowerCase().includes(searchParams.Name)){
+        if(item?.Name?.toLowerCase().includes(searchParams.Name) || 
+        item?.Role?.toLowerCase().includes(searchParams.Name) 
+       // || item?.CandidateId?.includes(searchParams.Name)
+        ){
           if(searchParams.Availability == ""){
             return true;
           } else if(searchParams.Availability != "" && item.Availability.toLowerCase() == searchParams.Availability){
@@ -135,7 +136,7 @@ const Candidates = () => {
                   </Col>
                   <Col md={9}>
                     <div className="mt-2">
-                      <div className="candidateId1">{eachCandidate.CandidateId} - {eachCandidate.Name}</div>
+                      <div className="candidateId1">C00{eachCandidate.CandidateId} - {eachCandidate.Name}</div>
                       <div className="candidate-role">{eachCandidate.Role}</div>
                     </div>
                   </Col>

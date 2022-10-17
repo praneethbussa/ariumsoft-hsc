@@ -12,7 +12,7 @@ export default function DeleteTask(props) {
         </div>
         <div className='d-flex flex-row justify-content-center mb-5'>
           <Button id='cancel' className='bg-white mx-2' onClick={props.onHide}>Cancel</Button>
-          <Button id='save' className='mx-2' style={{width:'37%'}} onClick={props.onHide}>Delete</Button>
+          <Button id='save' className='mx-2' style={{width:'37%'}} onClick={props.onDelete}>Delete</Button>
         </div>
       </Modal>
     </div>

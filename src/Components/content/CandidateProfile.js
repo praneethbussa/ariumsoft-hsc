@@ -41,7 +41,7 @@ export default function CandidateProfile({candidateDetails}) {
             <div className='heading'>Attachments</div>
                 <div className='col-4 p-3 card d-flex flex-row position-relative'>
                     <img className='file' src={File} alt={'File'}/> 
-                    <div>mjacob_resume.pdf</div>
+                    <div>{candidateDetails?.results?.Upload}</div>
                     <div className='format'>HSC Formated</div>
                 </div>
                 <div className='col-4 p-3 my-2 card d-flex flex-row'>

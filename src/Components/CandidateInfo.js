@@ -3,11 +3,14 @@ import plusCircle from "../Images/plus-circle.svg";
 import "../assets/CandidateInfo.css";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { useForm } from "react-hook-form";
-import { getCandidateInfo, saveCandidate, updateCandidate } from "./helpers/api/candidate";
+import {
+  getCandidateInfo,
+  saveCandidate,
+  updateCandidate,
+} from "./helpers/api/candidate";
 import Select from "react-select";
 
 const CandidateInfo = () => {
-  
   const [file, setFile] = useState();
   const { id } = useParams();
   const [isAddMode, setIsAddMode] = useState(id ? false : true);
@@ -15,15 +18,10 @@ const CandidateInfo = () => {
   const {
     register,
     handleSubmit,
-    formState: { errors }   ,
-    setValue 
+    formState: { errors },
+    setValue,
   } = useForm();
-  const availabilityOptions = [
-    {value: "", label: "All"},
-    { value: 'Inactive', label: 'In Active' },
-    { value: 'active', label: 'Active' }
-  ];
-console.log(isAddMode)
+ 
   useEffect(() => {
     if (!isAddMode) {
       (async () => {
@@ -31,49 +29,78 @@ console.log(isAddMode)
       })();
     }
   }, []);
- // var date = new Date().toISOString().substring(0, 10),
+
   useEffect(() => {
-    [{name: "Name", value : candidateDetails?.results?.Name},
-    {name: "CandidateId", value : candidateDetails?.results?.CandidateId},
-    {name: "Email", value : candidateDetails?.results?.Email},
-    {name: "Mobile", value : candidateDetails?.results?.Mobile},
-    {name: "StartdateofExclusivity", value : new Date("23-12-2020")}, //new Date(candidateDetails?.results?.StartdateofExclusivity)
-    {name: "AddressLine1", value : candidateDetails?.results?.AddressLine1},
-    {name: "City", value : candidateDetails?.results?.City},
-    {name: "State", value : candidateDetails?.results?.State},
-    {name: "Country", value : candidateDetails?.results?.Country},
-    {name: "Zipcode", value : candidateDetails?.results?.Zipcode},
-    {name: "Availability", value : candidateDetails?.results?.Availability},
-    {name: "Role", value : candidateDetails?.results?.Role},
-    {name: "Jobtype", value : candidateDetails?.results?.Jobtype},
-    {name: "Qualification", value : candidateDetails?.results?.Qualification},
-    {name: "Experience", value : candidateDetails?.results?.Experience}
-  ].forEach(({name, value}) => {
+    [
+      { name: "Name", value: candidateDetails?.results?.Name },
+      { name: "Email", value: candidateDetails?.results?.Email },
+      { name: "Mobile", value: candidateDetails?.results?.Mobile },
+      {
+        name: "StartdateofExclusivity",
+        value: candidateDetails?.results?.StartdateofExclusivity,
+      },
+      { name: "AddressLine1", value: candidateDetails?.results?.AddressLine1 },
+      { name: "AddressLine2", value: candidateDetails?.results?.AddressLine2 },
+      { name: "City", value: candidateDetails?.results?.City },
+      { name: "State", value: candidateDetails?.results?.State },
+      { name: "Country", value: candidateDetails?.results?.Country },
+      { name: "Zipcode", value: candidateDetails?.results?.Zipcode },
+      { name: "Availability", value: candidateDetails?.results?.Availability },
+      { name: "Role", value: candidateDetails?.results?.Role },
+      { name: "Jobtype", value: candidateDetails?.results?.Jobtype },
+      {
+        name: "Qualification",
+        value: candidateDetails?.results?.Qualification,
+      },
+      { name: "Experience", value: candidateDetails?.results?.Experience },
+    ].forEach(({ name, value }) => {
       setValue(name, value);
     });
-  }, [candidateDetails]);  
-  
-  const navigate = useNavigate();
-  const onSubmit = async (data) => {
-    if(isAddMode){
-    data.Upload = file?.name;
-    const saveCandInfo = await saveCandidate(data);
-    if (saveCandInfo?.data?.status === "successfully created") {
-      navigate("/candidates");
-    }
-  } else{
-    data.Upload = file?.name;
-    const editCandidate = await updateCandidate(id, data);
-    if (editCandidate?.data?.status === "success") {
-      navigate("/candidates");
-    }
-  }
+  }, [candidateDetails]);
+
+  var Upload;
+  const handleChange = (event) => {
+    // e.target.files[0].filename = e.target.files[0].name;
+    // console.log(e.target.files[0].filename)
+    Upload = setFile(event.target.files[0]);
+    console.log("Upload", Upload)
   };
 
-  const handleChange = (e) => {
-    setFile(e.target.files[0]);
+  const navigate = useNavigate();
+  const onSubmit = async (data) => {
+    if (isAddMode) {
+      const formData = new FormData();
+      // formData.append("file", Upload);
+      //formData.append("body", data);
+      formData.append("Name", data.Name);
+      formData.append("Email", data.Email);
+      formData.append("Mobile", data.Mobile);
+      formData.append("StartdateofExclusivity", data.StartdateofExclusivity);
+      formData.append("AddressLine1", data.AddressLine1);
+      formData.append("AddressLine2", data.AddressLine2);
+      formData.append("City", data.City);
+      formData.append("State", data.State);
+      formData.append("Country", data.Country);
+      formData.append("Zipcode", data.Zipcode);
+      formData.append("Availability", data.Availability);
+      formData.append("Qualification", data.Qualification);
+      formData.append("Experience", data.Experience);
+      formData.append("Jobtype", data.Jobtype);
+      formData.append("Role", data.Role);
+      formData.append("Upload", data.Upload[0].name);
+      const saveCandInfo = await saveCandidate(formData);
+      if (saveCandInfo?.data?.status === "successfully created") {
+        navigate("/candidates");
+      }
+    } else {
+      const editCandidate = await updateCandidate(id, data);
+      if (editCandidate?.data?.status === "success") {
+        navigate("/candidates");
+      }
+    }
   };
-console.log(candidateDetails?.results?.CandidateId)
+
+
   return (
     <div className="col-md-10 candidateInfo-page">
       <p className="candid-text">Candidate Information</p>
@@ -89,7 +116,7 @@ console.log(candidateDetails?.results?.CandidateId)
                   id="floatingInputValue"
                   placeholder="Name"
                   name="Name"
-                  {...register("Name", { required: true })}
+                  {...register("Name", { required: false })}
                 />
                 <label for="floatingInputValue">
                   Name<span className="mandatory">*</span>
@@ -100,30 +127,13 @@ console.log(candidateDetails?.results?.CandidateId)
                   </p>
                 )}
               </div>
-              <div className="form-floating col-md-3 mx-3">
-                <input
-                  type="text"
-                  className="form-control"
-                  id="floatingInputValue"
-                  placeholder="Candidate ID"
-                  {...register("CandidateId", { required: true })}
-                />
-                <label for="floatingInputValue">
-                  Candidate ID<span className="mandatory">*</span>
-                </label>
-                {errors.Name?.type === "required" && (
-                  <p role="alert" className="mandatory">
-                    CandidateId is required
-                  </p>
-                )}
-              </div>
-              <div className="col-md-2 form-floating">
+              <div className="col-md-3 mx-3 form-floating">
                 <input
                   type="text"
                   className="form-control"
                   id="floatingInputValue"
                   placeholder="Email"
-                  {...register("Email", { required: true })}
+                  {...register("Email", { required: false })}
                 />
                 <label for="floatingInputValue">
                   Email<span className="mandatory">*</span>
@@ -143,7 +153,7 @@ console.log(candidateDetails?.results?.CandidateId)
                   className="form-control"
                   id="floatingInputValue"
                   placeholder="Mobile"
-                  {...register("Mobile", { required: true })}
+                  {...register("Mobile", { required: false })}
                 />
                 <label for="floatingInputValue">
                   Mobile<span className="mandatory">*</span>
@@ -155,7 +165,7 @@ console.log(candidateDetails?.results?.CandidateId)
                   className="form-control"
                   id="floatingInputValue"
                   placeholder="Address Line 1"
-                  {...register("AddressLine1", { required: true })}
+                  {...register("AddressLine1", { required: false })}
                 />
                 <label for="floatingInputValue">
                   Address Line 1<span className="mandatory">*</span>
@@ -180,7 +190,7 @@ console.log(candidateDetails?.results?.CandidateId)
                   className="form-control"
                   id="floatingInputValue"
                   placeholder="City"
-                  {...register("City", { required: true })}
+                  {...register("City", { required: false })}
                 />
                 <label for="floatingInputValue">
                   City<span className="mandatory">*</span>
@@ -192,7 +202,7 @@ console.log(candidateDetails?.results?.CandidateId)
                   className="form-control"
                   id="floatingInputValue"
                   placeholder="State"
-                  {...register("State", { required: true })}
+                  {...register("State", { required: false })}
                 />
                 <label for="floatingInputValue">
                   State<span className="mandatory">*</span>
@@ -204,7 +214,7 @@ console.log(candidateDetails?.results?.CandidateId)
                   className="form-control"
                   id="floatingInputValue"
                   placeholder="Country"
-                  {...register("Country", { required: true })}
+                  {...register("Country", { required: false })}
                 />
                 <label for="floatingInputValue">
                   Country<span className="mandatory">*</span>
@@ -219,24 +229,43 @@ console.log(candidateDetails?.results?.CandidateId)
                   className="form-control"
                   id="floatingInputValue"
                   placeholder="ZipCode"
-                  {...register("Zipcode", { required: true })}
+                  {...register("Zipcode", { required: false })}
                 />
                 <label for="floatingInputValue">
                   ZipCode<span className="mandatory">*</span>
                 </label>
               </div>
               <div className="col-md-3 mx-3 form-floating">
-                
                 <select
                   className="form-select"
                   aria-label="Default select example"
-                  {...register("Availability", { required: true })}
+                  {...register("Availability", { required: false })}
                 >
-                  <option value="" >All</option>
-                  <option value="active" selected={candidateDetails?.results?.Availability == "active" ? "selected" : ""}>Active</option>
-                  <option value="Inactive" selected={candidateDetails?.results?.Availability == "Inactive" ? "selected" : ""}>In Active</option>
+                  <option value="">All</option>
+                  <option
+                    value="active"
+                    selected={
+                      candidateDetails?.results?.Availability == "active"
+                        ? "selected"
+                        : ""
+                    }
+                  >
+                    Active
+                  </option>
+                  <option
+                    value="Inactive"
+                    selected={
+                      candidateDetails?.results?.Availability == "Inactive"
+                        ? "selected"
+                        : ""
+                    }
+                  >
+                    In Active
+                  </option>
                 </select>
-                <label for="floatingInputValue">Availability</label>
+                <label for="floatingInputValue">
+                  Availability<span className="mandatory">*</span>
+                </label>
               </div>
             </div>
 
@@ -261,8 +290,26 @@ console.log(candidateDetails?.results?.CandidateId)
                   defaultValue={candidateDetails?.results?.Jobtype}
                 >
                   <option value="">Select</option>
-                  <option value="full time" selected={candidateDetails?.results?.Jobtype == "full time" ? "selected" : ""}>Full Time</option>
-                  <option value="part time" selected={candidateDetails?.results?.Jobtype == "part time" ? "selected" : ""}>Part Time</option>
+                  <option
+                    value="full time"
+                    selected={
+                      candidateDetails?.results?.Jobtype == "full time"
+                        ? "selected"
+                        : ""
+                    }
+                  >
+                    Full Time
+                  </option>
+                  <option
+                    value="part time"
+                    selected={
+                      candidateDetails?.results?.Jobtype == "part time"
+                        ? "selected"
+                        : ""
+                    }
+                  >
+                    Part Time
+                  </option>
                 </select>
                 <label for="floatingInputValue">Job Type</label>
               </div>
@@ -289,8 +336,27 @@ console.log(candidateDetails?.results?.CandidateId)
                   {...register("Qualification")}
                 >
                   <option value="">Select</option>
-                  <option value="post graduate" selected={candidateDetails?.results?.Qualification == "post graduate" ? "selected" : ""}>Post Graduate</option>
-                  <option value="graduate" selected={candidateDetails?.results?.Qualification == "graduate" ? "selected" : ""}>Graduate</option>
+                  <option
+                    value="post graduate"
+                    selected={
+                      candidateDetails?.results?.Qualification ==
+                      "post graduate"
+                        ? "selected"
+                        : ""
+                    }
+                  >
+                    Post Graduate
+                  </option>
+                  <option
+                    value="graduate"
+                    selected={
+                      candidateDetails?.results?.Qualification == "graduate"
+                        ? "selected"
+                        : ""
+                    }
+                  >
+                    Graduate
+                  </option>
                 </select>
                 <label for="floatingInputValue">Qualification</label>
               </div>
@@ -301,8 +367,26 @@ console.log(candidateDetails?.results?.CandidateId)
                   {...register("Experience")}
                 >
                   <option value="">Select</option>
-                  <option value="2-3 years" selected={candidateDetails?.results?.Experience == "2-3 years" ? "selected" : ""}>2-3 years</option>
-                  <option value="3-4 years" selected={candidateDetails?.results?.Experience == "3-4 years" ? "selected" : ""}>3-4 years</option>
+                  <option
+                    value="2-3 years"
+                    selected={
+                      candidateDetails?.results?.Experience == "2-3 years"
+                        ? "selected"
+                        : ""
+                    }
+                  >
+                    2-3 years
+                  </option>
+                  <option
+                    value="3-4 years"
+                    selected={
+                      candidateDetails?.results?.Experience == "3-4 years"
+                        ? "selected"
+                        : ""
+                    }
+                  >
+                    3-4 years
+                  </option>
                 </select>
                 <label for="floatingInputValue">Experience</label>
               </div>
@@ -323,13 +407,19 @@ console.log(candidateDetails?.results?.CandidateId)
               </div>
             </div>
 
-            <div className="col-md-6">
-              {/* <label className="resume">Upload Resume<img src={plusCircle} alt="..." id="plus-icon"></img></label> */}
+            {/* <div className="col-md-6">
+              <label className="resume">Upload Resume<img src={plusCircle} alt="..." id="plus-icon"></img></label>
               <span className="resume-upload">Upload Resume</span>
               <img src={plusCircle} alt="..." id="plus-icon"></img>
-              <input type="file" onChange={handleChange}></input>
+              <input
+                type="file"
+                {...register("Upload")}
+                onChange={handleChange}
+              ></input>
+            </div> */}
+            <div className="col-md-6">
+            <label className="resume">Upload Resume<img src={plusCircle} alt="..." id="plus-icon"></img></label>
             </div>
-      
 
             <div className="format-file">
               <div className="checking-box">
