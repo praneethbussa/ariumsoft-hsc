@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import { Button } from "react-bootstrap";
-
-import Search from "../../Images/Search.svg";
 import User from "../../Images/User.svg";
 import Delete from "../../Images/Delete.svg";
 
@@ -29,7 +27,7 @@ export default function MyTasks() {
   }, []);
 
   const setFilterParams = (field, value) => {
-    if(field == "title"){
+    if(field === "title"){
       searchParams.title = value;
     }else{
       searchParams[field] = value;
@@ -39,9 +37,9 @@ export default function MyTasks() {
   }
   const filterTasks = () => { 
     const results = allTasks?.filter(function(item) {
-      if(searchParams.title == ""){
+      if(searchParams.title === ""){
         return true;
-      } else if (searchParams.title != "") {
+      } else if (searchParams.title !== "") {
         if(item?.title?.toLowerCase().includes(searchParams.title) || 
         item?.role?.toLowerCase().includes(searchParams.title))
        {
@@ -91,22 +89,18 @@ export default function MyTasks() {
           <h5 className="headings">MyTasks</h5>
           <div className="line"></div>
         </div>
-        <div
-          id="search"
-          className="mx-2 px-3 d-flex flex-row position-relative"
-        >
-          <img
-            className="h-50 position-relative my-3 mx-0 top-0 start-0"
-            src={Search}
-            alt={"Search"}
-          />
+    
+        <div className='col-md-12'>
+        <div class="search-bar">
+          <i class="fa fa-search"></i>
           <input
             type="text"
-            className="border-0 form-control search"
+            className="form-control"
             placeholder="Search"
             onChange={e => setFilterParams("title", e.target.value.toLowerCase())}
-          />
+          ></input>
         </div>
+      </div>
 
         <div className="container">
         <div className="row">

@@ -17,9 +17,6 @@ export const getCandidateInfo = async (id) => {
 
 export const saveCandidate = async (data) => {
     try {
-      // await axios.post('http://localhost:3000', data, {headers:{"Content-Type": "multipart/form-data"}}).then((response) => {
-      //   console.log(response.data);
-      // });
       const saveCandidate = await axios.post(`${url}/hsc/createCandidate`, data, {headers:{"Content-Type": "multipart/form-data"}});
       return saveCandidate;
     } catch (error) {}

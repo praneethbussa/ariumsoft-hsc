@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { useParams, Link, useNavigate } from 'react-router-dom';
-import Search from '../../Images/Search.svg';
+import { useParams, Link } from 'react-router-dom';
 import User from '../../Images/User.svg';
 import Edit from '../../Images/Edit.svg';
 import Delete from '../../Images/Delete.svg';
@@ -12,7 +11,7 @@ import DeleteTask from './DeleteTask';
 import { Button } from 'react-bootstrap';
 import './JobOpening.css'
 import { deleteJobOpening, getAllJobOpenings } from '../helpers/api/jobs';
-import { useForm } from 'react-hook-form';
+
 
 export default function JobOpening() {
 
@@ -33,7 +32,7 @@ export default function JobOpening() {
       }, []);
 
       const setFilterParams = (field, value) => {
-        if(field == "JobTitle"){
+        if(field === "JobTitle"){
           searchParams.JobTitle = value;
         }else{
           searchParams[field] = value;
@@ -43,9 +42,9 @@ export default function JobOpening() {
       }
       const filterJobOpenings = () => { 
         const results = allJobs?.filter(function(item) {
-          if(searchParams.JobTitle == ""){
+          if(searchParams.JobTitle === ""){
             return true;
-          } else if (searchParams.JobTitle != "") {
+          } else if (searchParams.JobTitle !== "") {
             if(item?.JobTitle?.toLowerCase().includes(searchParams.JobTitle) || 
             item?.ClientName?.toLowerCase().includes(searchParams.JobTitle))
            {
@@ -88,11 +87,17 @@ export default function JobOpening() {
                     <h5 className='headings'>Job Openings</h5>
                     <div className='line'></div>    
                 </div>
-                <div id='search' className="mx-2 px-3 d-flex flex-row position-relative">
-                    <img className='h-50 position-relative my-3 mx-0 top-0 start-0' src={Search} alt={'Search'} />
-                    <input type="text" className="border-0 form-control search" placeholder="Search" 
-                    onChange={e => setFilterParams("JobTitle", e.target.value.toLowerCase())}/>
-                </div>
+                <div className='col-md-12'>
+        <div class="search-bar">
+          <i class="fa fa-search"></i>
+          <input
+            type="text"
+            className="form-control"
+            placeholder="Search"
+            onChange={e => setFilterParams("JobTitle", e.target.value.toLowerCase())}
+          ></input>
+        </div>
+      </div>
                 <div className='container'>
                     <div className='row'>
                         <div className='col-md-6'>
@@ -154,12 +159,7 @@ export default function JobOpening() {
                                     <div>{activeJob?.Experience}</div>
                                     <div className="heading">Job Description</div>
                                     <div className='py-1 scroll d-flex align-content-start flex-wrap'>
-                                        <div>1. Conducting user research and testing. </div>
-                                        <div>2. Collaborating with Designers and Developers to create intuitive, user-friendly software.</div>
-                                        <div>3. Create personas through user research and data.</div>
-                                        <div>4. Collaborating with Designers and Developers to create intuitive, user-friendly software.</div>
-                                        <div>5. Conducting user research and testing.</div>
-                                        <div>6. Create personas through user research and data.</div>        
+                                        <div>{activeJob?.Jobdescription}</div>
                                     </div>
                                 </div>
                             </div> }
