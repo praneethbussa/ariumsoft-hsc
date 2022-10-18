@@ -2,19 +2,11 @@ import React from "react";
 import "./SaveJob.css";
 
 export default function SaveJob({candidateDetails}) {
-  //const [jobOpeningsList, setJobOpeningsList] = useState([]);
+
   const jobOpeningsList = [
     { value: "J001", label: "JO001 - Interaction Designer" },
     { value: "need to be updated", label: "JO002 - Interaction Designer" },
   ];
-  
-
-//   useEffect(() => {
-//     (async () => {
-//       const res = await getJobOpeningsList();
-//       setJobOpeningsList(res?.data?.candidates);
-//     })();
-//   }, []);
 
   return (
     <div className="d-flex flex-row my-5">
@@ -24,7 +16,7 @@ export default function SaveJob({candidateDetails}) {
             <option value="">Select</option>
             {jobOpeningsList?.length &&
               jobOpeningsList?.map((eachJob) => (
-                <option value={eachJob.value} selected={candidateDetails.JobID == eachJob.value ? "selected" : ""}>{eachJob.label}</option>
+                <option value={eachJob.value} selected={candidateDetails.JobID === eachJob.value ? "selected" : ""}>{eachJob.label}</option>
               ))}
           </select>
           <label for="floatingInputValue">Job Opening</label>

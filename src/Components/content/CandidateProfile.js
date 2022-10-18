@@ -13,7 +13,7 @@ export default function CandidateProfile({candidateDetails}) {
       setCandidates(await getCandidateInfo());
     })();
   }, []);
-  console.log(candidateDetails?.results?.City, "cc profile")
+  
   return (
     <div>
         <div className='d-flex flex-row'>

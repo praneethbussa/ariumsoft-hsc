@@ -245,7 +245,7 @@ const CandidateInfo = () => {
                   <option
                     value="active"
                     selected={
-                      candidateDetails?.results?.Availability == "active"
+                      candidateDetails?.results?.Availability === "active"
                         ? "selected"
                         : ""
                     }
@@ -255,7 +255,7 @@ const CandidateInfo = () => {
                   <option
                     value="Inactive"
                     selected={
-                      candidateDetails?.results?.Availability == "Inactive"
+                      candidateDetails?.results?.Availability === "Inactive"
                         ? "selected"
                         : ""
                     }
@@ -293,7 +293,7 @@ const CandidateInfo = () => {
                   <option
                     value="full time"
                     selected={
-                      candidateDetails?.results?.Jobtype == "full time"
+                      candidateDetails?.results?.Jobtype === "full time"
                         ? "selected"
                         : ""
                     }
@@ -303,7 +303,7 @@ const CandidateInfo = () => {
                   <option
                     value="part time"
                     selected={
-                      candidateDetails?.results?.Jobtype == "part time"
+                      candidateDetails?.results?.Jobtype === "part time"
                         ? "selected"
                         : ""
                     }
@@ -339,7 +339,7 @@ const CandidateInfo = () => {
                   <option
                     value="post graduate"
                     selected={
-                      candidateDetails?.results?.Qualification ==
+                      candidateDetails?.results?.Qualification ===
                       "post graduate"
                         ? "selected"
                         : ""
@@ -350,7 +350,7 @@ const CandidateInfo = () => {
                   <option
                     value="graduate"
                     selected={
-                      candidateDetails?.results?.Qualification == "graduate"
+                      candidateDetails?.results?.Qualification === "graduate"
                         ? "selected"
                         : ""
                     }
@@ -370,7 +370,7 @@ const CandidateInfo = () => {
                   <option
                     value="2-3 years"
                     selected={
-                      candidateDetails?.results?.Experience == "2-3 years"
+                      candidateDetails?.results?.Experience === "2-3 years"
                         ? "selected"
                         : ""
                     }
@@ -380,7 +380,7 @@ const CandidateInfo = () => {
                   <option
                     value="3-4 years"
                     selected={
-                      candidateDetails?.results?.Experience == "3-4 years"
+                      candidateDetails?.results?.Experience === "3-4 years"
                         ? "selected"
                         : ""
                     }

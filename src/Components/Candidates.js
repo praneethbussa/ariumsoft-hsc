@@ -21,7 +21,7 @@ const Candidates = () => {
   }, []);
 
   const setFilterParams = (field, value) => {
-    if(field == "Name"){
+    if(field === "Name"){
       searchParams.Name = value;
       searchParams.Role = value;
     }else{
@@ -33,16 +33,16 @@ const Candidates = () => {
   }
   const filterCandidates = () => { 
     const results = candidates?.filter(function(item) {
-      if(searchParams.Name == "" && searchParams.Availability == ""){
+      if(searchParams.Name === "" && searchParams.Availability === ""){
         return true;
-      } else if (searchParams.Name != "" || searchParams.Availability != "") {
+      } else if (searchParams.Name !== "" || searchParams.Availability !== "") {
         if(item?.Name?.toLowerCase().includes(searchParams.Name) || 
         item?.Role?.toLowerCase().includes(searchParams.Name) 
        // || item?.CandidateId?.includes(searchParams.Name)
         ){
-          if(searchParams.Availability == ""){
+          if(searchParams.Availability === ""){
             return true;
-          } else if(searchParams.Availability != "" && item.Availability.toLowerCase() == searchParams.Availability){
+          } else if(searchParams.Availability !== "" && item.Availability.toLowerCase() == searchParams.Availability){
             return true;
           } else {
             return false;
@@ -131,7 +131,7 @@ const Candidates = () => {
                         className="fa-solid fa-circle-user"
                         id="candidate-icon"
                       ></i>
-                      <img src={eachCandidate?.Availability == "active" ? GreenTick : RedCross} className="tick-img" alt="..." />
+                      <img src={eachCandidate?.Availability === "active" ? GreenTick : RedCross} className="tick-img" alt="..." />
                     </span>
                   </Col>
                   <Col md={9}>
@@ -149,7 +149,7 @@ const Candidates = () => {
                     <Col>
                       <span className="recruit">Williams</span>
                       <span className="exclusive">Exclusive</span>
-                      <span className="until-date">{eachCandidate.StartdateofExclusivity}</span>
+                      <span className="until-date">until {eachCandidate.StartdateofExclusivity}</span>
                     </Col>
                   </Row>
                 </Row>

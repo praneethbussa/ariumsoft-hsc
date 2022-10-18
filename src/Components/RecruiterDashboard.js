@@ -89,17 +89,17 @@ const RecruitDashboard = () => {
                 {tasks?.data?.Tasks?.length && tasks?.data?.Tasks?.map((eachTask) => 
                   <Link to={`/mytasks/${eachTask?._id}`} style={{textDecoration:'none', color:'#A2A2A2'}}>
                   <div className="task">
-                    <img src={eachTask?.readstatus == "unread" ? dot : null} style={{float: "right"}} />
-                    <div className="jobid" style={eachTask?.readstatus == "unread" ? unReadStyle : readStyle}>
+                    <img src={eachTask?.readstatus === "unread" ? dot : null} style={{float: "right"}} />
+                    <div className="jobid" style={eachTask?.readstatus === "unread" ? unReadStyle : readStyle}>
                       {eachTask?.title}
                     </div>
                     <div className="d-flex flex-row">
                       <div className="col-md-1 client">
                         <i className="fa-solid fa-circle-user" id="user-icon" />
                       </div>
-                      <div className="col assignee-name" style={eachTask?.readstatus == "unread" ? RecruiterStyle : recruiterStyle}>Emily</div>
-                      <div className="date mx-2 col-md-auto" style={eachTask?.readstatus == "unread" ? DateStyle : dateStyle}>{eachTask?.createddate}</div>
-                      <div className="time col-md-2" style={eachTask?.readstatus == "unread" ? DateStyle : dateStyle}>{eachTask?.createdtime}</div>
+                      <div className="col assignee-name" style={eachTask?.readstatus === "unread" ? RecruiterStyle : recruiterStyle}>Emily</div>
+                      <div className="date mx-2 col-md-auto" style={eachTask?.readstatus === "unread" ? DateStyle : dateStyle}>{eachTask?.createddate}</div>
+                      <div className="time col-md-2" style={eachTask?.readstatus === "unread" ? DateStyle : dateStyle}>{eachTask?.createdtime}</div>
                     </div>
                   </div>
                   </Link>
@@ -135,7 +135,7 @@ const RecruitDashboard = () => {
                           className="fa-solid fa-circle-user"
                           id="candidate-icon"
                         ></i>
-                        <img src={eachCandidate?.Availability == "active" ? GreenTick : RedCross} className="tick-img" alt="..."/>
+                        <img src={eachCandidate?.Availability === "active" ? GreenTick : RedCross} className="tick-img" alt="..."/>
                       </span>
                     </Col>
                     <Col md={10}>
